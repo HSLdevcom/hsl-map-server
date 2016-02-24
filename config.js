@@ -22,7 +22,7 @@ module.exports = {
     }
   },
   "/finland-stop-map": {
-    "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/finland/index/graphql,
+    "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/finland/index/graphql`,
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
