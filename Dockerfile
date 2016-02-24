@@ -14,18 +14,13 @@ RUN apt-get update \
 
 RUN mkdir -p ${WORK}
 
-RUN npm install tessera \
-  tilejson \
-  tilelive-http \
-  tilelive-otp-stops \
-  tilelive-hsl-parkandride \
-  mbtiles \
-  tilelive-xray \
-  forever
+ADD . ${WORK}
 
-RUN curl https://osm2vectortiles-downloads.os.zhdk.cloud.switch.ch/v1.0/extracts/finland.mbtiles > finland.mbtiles
+RUN npm install
 
-ADD xorg.conf ${WORK}/xorg.conf
+#TODO: Replace when https://github.com/osm2vectortiles/osm2vectortiles/issues/114 is fixed
+RUN curl http://koti.kapsi.fi/~hannes/tiles.mbtiles > finland.mbtiles
+#RUN curl https://osm2vectortiles-downloads.os.zhdk.cloud.switch.ch/v1.0/extracts/finland.mbtiles > finland.mbtiles
 
 RUN npm install https://github.com/hannesj/tilelive-gl.git
 
@@ -33,11 +28,10 @@ RUN npm install https://github.com/HSLdevcom/hsl-map-style.git
 
 RUN cd ${WORK}/node_modules/hsl-map-style && \
   unzip -P ${FONTSTACK_PASSWORD} fontstack.zip && \
-  sed -i -e "s#http://localhost:3000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v8.json
+  sed -i -e "s#http://localhost:3000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v8.json && \
+  sed -i -e 's#dev.digitransit.fi/#localhost:8080/#' hsl-gl-map-v8.json
 
-COPY config.js ${WORK}/
-
-EXPOSE 8088
+EXPOSE 8080
 
 #RUN chown -R 9999:9999 ${WORK}
 #USER 9999
@@ -45,7 +39,7 @@ EXPOSE 8088
 CMD Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
   sleep 15 && \
   DISPLAY=":10" node_modules/.bin/forever start -c "node --harmony" \
-  node_modules/tessera/bin/tessera.js --port 8088 --config config.js \
+  node_modules/tessera/bin/tessera.js --port 8080 --config config.js \
   -r ${WORK}/node_modules/tilelive-otp-stops/ \
   -r ${WORK}/node_modules/tilelive-gl/ \
   -r ${WORK}/node_modules/tilelive-hsl-parkandride \

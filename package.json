@@ -1,0 +1,29 @@
+{
+  "name": "hsl-map-server",
+  "version": "1.0.0",
+  "description": "HSL map server",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HSLdevcom/hsl-map-server.git"
+  },
+  "author": "HSLdevcom",
+  "license": "(AGPL-3.0 OR EUPL-1.2)",
+  "bugs": {
+    "url": "https://github.com/HSLdevcom/hsl-map-server/issues"
+  },
+  "homepage": "https://github.com/HSLdevcom/hsl-map-server#readme",
+  "dependencies": {
+    "forever": "^0.15.1",
+    "mbtiles": "^0.8.2",
+    "tessera": "^0.8.0",
+    "tilejson": "^1.0.1",
+    "tilelive-hsl-parkandride": "0.0.2",
+    "tilelive-http": "^0.10.0",
+    "tilelive-otp-stops": "^0.1.0",
+    "tilelive-xray": "^0.2.0"
+  }
+}
