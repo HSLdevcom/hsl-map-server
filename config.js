@@ -16,13 +16,13 @@ module.exports = {
     }
   },
   "/hsl-stop-map": {
-    "source": "otpstops://otp:{{otp_exposed_port}}/otp/routers/hsl/index/graphql",
+    "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/hsl/index/graphql`,
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
   },
   "/finland-stop-map": {
-    "source": "otpstops://otp:{{otp_exposed_port}}/otp/routers/finland/index/graphql",
+    "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/finland/index/graphql,
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
