@@ -31,11 +31,8 @@ RUN cd ${WORK}/node_modules/hsl-map-style && \
   sed -i -e "s#http://localhost:3000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v8.json && \
   sed -i -e 's#dev.digitransit.fi/#localhost:8080/#' hsl-gl-map-v8.json
 
-ARG OTP_URL=dev.digitransit.fi
-ARG OTP_PORT=80
-
-ENV OTP_URL $OTP_URL
-ENV OTP_PORT $OTP_PORT
+ENV OTP_URL dev.digitransit.fi
+ENV OTP_PORT 80
 
 EXPOSE 8080
 
