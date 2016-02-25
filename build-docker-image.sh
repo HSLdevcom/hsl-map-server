@@ -7,9 +7,11 @@
 #DOCKER_AUTH=
 
 # Build image
-IMAGE="hsldevcom/hsl-map-server"
-docker build --tag="$IMAGE:$DOCKER_TAG" .
+SNAP_IMAGE="hsldevcom/hsl-map-server:$DOCKER_TAG"
+LATEST_IMAGE="hsldevcom/hsl-map-server:latest"
+
+docker build --tag=$SNAP_IMAGE .
 docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_AUTH
-docker push $IMAGE:$DOCKER_TAG
-docker tag $IMAGE:$DOCKER_TAG $IMAGE:latest
-docker push $IMAGE:latest
+docker push $SNAP_IMAGE
+docker tag $SNAP_IMAGE $LATEST_IMAGE
+docker push $LATEST_IMAGE
