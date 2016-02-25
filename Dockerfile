@@ -1,9 +1,11 @@
 FROM node:4
 MAINTAINER Reittiopas version: 0.1
 
-ARG FONTSTACK_PASSWORD
-
+ENV FONTSTACK_PASSWORD ""
+ENV OTP_URL dev.digitransit.fi
+ENV OTP_PORT 80
 ENV WORK=/opt/hsl-map-server
+
 WORKDIR ${WORK}
 
 RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list
@@ -27,19 +29,17 @@ RUN npm install https://github.com/hannesj/tilelive-gl.git
 RUN npm install https://github.com/HSLdevcom/hsl-map-style.git
 
 RUN cd ${WORK}/node_modules/hsl-map-style && \
-  unzip -P ${FONTSTACK_PASSWORD} fontstack.zip && \
   sed -i -e "s#http://localhost:3000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v8.json && \
   sed -i -e 's#dev.digitransit.fi/#localhost:8080/#' hsl-gl-map-v8.json
-
-ENV OTP_URL dev.digitransit.fi
-ENV OTP_PORT 80
 
 EXPOSE 8080
 
 #RUN chown -R 9999:9999 ${WORK}
 #USER 9999
 
-CMD Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
+CMD
+  unzip -P ${FONTSTACK_PASSWORD} fontstack.zip && \
+  Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
   sleep 15 && \
   DISPLAY=":10" node_modules/.bin/forever start -c "node --harmony" \
   node_modules/tessera/bin/tessera.js --port 8080 --config config.js \
