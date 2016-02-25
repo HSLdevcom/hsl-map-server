@@ -8,7 +8,7 @@
 
 # Build image
 IMAGE="hsldevcom/hsl-map-server"
-docker build --build-arg --tag="$IMAGE:$DOCKER_TAG" .
+docker build --tag="$IMAGE:$DOCKER_TAG" .
 docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_AUTH
 docker push $IMAGE:$DOCKER_TAG
 docker tag $IMAGE:$DOCKER_TAG $IMAGE:latest
