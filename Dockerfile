@@ -38,7 +38,7 @@ EXPOSE 8080
 #USER 9999
 
 CMD cd ${WORK}/node_modules/hsl-map-style \
-  unzip -P ${FONTSTACK_PASSWORD} ./node_modules/hsl-map-style/fontstack.zip && \
+  unzip -P ${FONTSTACK_PASSWORD} fontstack.zip && \
   cd ${WORK} \
   Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
   sleep 15 && \
