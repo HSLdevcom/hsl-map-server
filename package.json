@@ -23,6 +23,7 @@
     "tilejson": "^1.0.1",
     "tilelive-hsl-parkandride": "0.0.2",
     "tilelive-http": "^0.10.0",
+    "tilelive-otp-routes": "^0.1.0",
     "tilelive-otp-stops": "^0.1.0",
     "tilelive-vector": "^3.8.0",
     "tilelive-xray": "^0.2.0"
