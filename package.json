@@ -22,6 +22,7 @@
     "tessera": "^0.8.0",
     "tilejson": "^1.0.1",
     "tilelive-hsl-parkandride": "0.0.2",
+    "tilelive-hsl-ticket-sales": "0.0.2",
     "tilelive-http": "^0.10.0",
     "tilelive-otp-routes": "^0.1.0",
     "tilelive-otp-stops": "^0.1.0",
