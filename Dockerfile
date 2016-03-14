@@ -18,7 +18,7 @@ RUN mkdir -p ${WORK}
 
 ADD . ${WORK}
 
-RUN npm install
+RUN npm install && echo 1
 
 #TODO: Replace when https://github.com/osm2vectortiles/osm2vectortiles/issues/114 is fixed
 RUN curl http://koti.kapsi.fi/~hannes/tiles.mbtiles > finland.mbtiles
