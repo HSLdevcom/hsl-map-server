@@ -18,7 +18,7 @@ RUN mkdir -p ${WORK}
 
 ADD . ${WORK}
 
-RUN npm install
+RUN npm install && echo 1
 
 #TODO: Replace when https://github.com/osm2vectortiles/osm2vectortiles/issues/114 is fixed
 RUN curl http://koti.kapsi.fi/~hannes/tiles.mbtiles > finland.mbtiles
@@ -48,4 +48,5 @@ CMD cd ${WORK}/node_modules/hsl-map-style && \
   -r ${WORK}/node_modules/tilelive-otp-routes/ \
   -r ${WORK}/node_modules/tilelive-gl/ \
   -r ${WORK}/node_modules/tilelive-hsl-parkandride \
+  -r ${WORK}/node_modules/tilelive-hsl-ticket-sales \
   && sleep 10 && node_modules/.bin/forever --fifo logs 0
