@@ -16,7 +16,7 @@ RUN apt-get update \
 
 RUN mkdir -p ${WORK}
 
-ADD . ${WORK}
+ADD package.json ${WORK}
 
 RUN npm install && echo 1
 
@@ -34,8 +34,12 @@ RUN cd ${WORK}/node_modules/hsl-map-style && \
 
 EXPOSE 8080
 
-#RUN chown -R 9999:9999 ${WORK}
-#USER 9999
+ADD . ${WORK}
+
+RUN chmod -R 777 ${WORK}
+
+RUN mkdir /.forever && chmod -R 777 /.forever
+USER 9999
 
 CMD cd ${WORK}/node_modules/hsl-map-style && \
   unzip -P ${FONTSTACK_PASSWORD} fontstack.zip && \
