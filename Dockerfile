@@ -16,9 +16,9 @@ RUN apt-get update \
 
 RUN mkdir -p ${WORK}
 
-ADD package.json ${WORK}
+ADD . ${WORK}
 
-RUN npm install && echo 1
+RUN npm install 
 
 #TODO: Replace when https://github.com/osm2vectortiles/osm2vectortiles/issues/114 is fixed
 RUN curl http://koti.kapsi.fi/~hannes/tiles.mbtiles > finland.mbtiles
@@ -33,8 +33,6 @@ RUN cd ${WORK}/node_modules/hsl-map-style && \
   sed -i -e 's#dev.digitransit.fi/#localhost:8080/#' hsl-gl-map-v8.json
 
 EXPOSE 8080
-
-ADD . ${WORK}
 
 RUN chmod -R 777 ${WORK}
 
