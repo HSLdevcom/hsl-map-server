@@ -44,6 +44,7 @@ CMD cd ${WORK}/node_modules/hsl-map-style && \
   sleep 15 && \
   DISPLAY=":10" node_modules/.bin/forever start -c "node --harmony" \
   node_modules/tessera/bin/tessera.js --port 8080 --config config.js \
+  -r ${WORK}/node_modules/tilelive-otp-citybikes/ \
   -r ${WORK}/node_modules/tilelive-otp-stops/ \
   -r ${WORK}/node_modules/tilelive-otp-routes/ \
   -r ${WORK}/node_modules/tilelive-gl/ \

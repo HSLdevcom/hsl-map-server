@@ -15,6 +15,12 @@ module.exports = {
       "Cache-Control": "public,max-age=604800"
     }
   },
+  "/hsl-citybike-map": {
+    "source": `otpcitybikes://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/hsl/index/graphql`,
+    "headers": {
+      "Cache-Control": "public,max-age=3600"
+    }
+  },
   "/hsl-stop-map": {
     "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/hsl/index/graphql`,
     "headers": {
