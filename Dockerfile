@@ -11,7 +11,7 @@ WORKDIR ${WORK}
 RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list
 
 RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y -t jessie-backports libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy
 
 RUN mkdir -p ${WORK}
