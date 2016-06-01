@@ -15,6 +15,16 @@ module.exports = {
       "Cache-Control": "public,max-age=604800"
     }
   },
+  "/hsl-map-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": {layerTileSize: 256},
+      "style": require("hsl-map-style")
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
   "/hsl-citybike-map": {
     "source": `otpcitybikes://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/hsl/index/graphql`,
     "headers": {
