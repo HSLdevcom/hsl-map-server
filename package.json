@@ -17,17 +17,17 @@
   },
   "homepage": "https://github.com/HSLdevcom/hsl-map-server#readme",
   "dependencies": {
-    "forever": "^0.15.1",
-    "mbtiles": "^0.8.2",
-    "tessera": "^0.8.0",
+    "forever": "^0.15.2",
+    "mbtiles": "^0.9.0",
+    "tessera": "^0.9.0",
     "tilejson": "^1.0.1",
     "tilelive-hsl-parkandride": "0.0.2",
     "tilelive-hsl-ticket-sales": "0.0.1",
     "tilelive-http": "^0.10.0",
     "tilelive-otp-citybikes": "^0.0.2",
-    "tilelive-otp-routes": "^0.1.0",
-    "tilelive-otp-stops": "^0.1.0",
-    "tilelive-vector": "^3.8.0",
+    "tilelive-otp-routes": "^0.1.1",
+    "tilelive-otp-stops": "^0.1.1",
+    "tilelive-vector": "^3.9.3",
     "tilelive-xray": "^0.2.0"
   }
 }
