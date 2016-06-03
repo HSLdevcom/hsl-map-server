@@ -18,10 +18,10 @@ RUN mkdir -p ${WORK}
 
 ADD . ${WORK}
 
-RUN npm install 
+RUN npm install
 
 #TODO: Replace when https://github.com/osm2vectortiles/osm2vectortiles/issues/114 is fixed
-RUN curl http://koti.kapsi.fi/~hannes/tiles.mbtiles > finland.mbtiles
+RUN curl http://koti.kapsi.fi/~hannes/tiles.v7.mbtiles > finland.mbtiles
 #RUN curl https://osm2vectortiles-downloads.os.zhdk.cloud.switch.ch/v1.0/extracts/finland.mbtiles > finland.mbtiles
 
 RUN npm install https://github.com/hannesj/tilelive-gl.git
@@ -29,8 +29,8 @@ RUN npm install https://github.com/hannesj/tilelive-gl.git
 RUN npm install https://github.com/HSLdevcom/hsl-map-style.git
 
 RUN cd ${WORK}/node_modules/hsl-map-style && \
-  sed -i -e "s#http://localhost:3000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v8.json && \
-  sed -i -e 's#dev.digitransit.fi/#localhost:8080/#' hsl-gl-map-v8.json
+  sed -i -e "s#http://localhost:8000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v9.json && \
+  sed -i -e 's#api.digitransit.fi/map/v1/#localhost:8080/#' hsl-gl-map-v9.json
 
 EXPOSE 8080
 
