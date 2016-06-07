@@ -49,6 +49,12 @@ module.exports = {
       "Cache-Control": "public,max-age=3600"
     }
   },
+  "/waltti-stop-map": {
+    "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/waltti/index/graphql`,
+    "headers": {
+      "Cache-Control": "public,max-age=3600"
+    }
+  },
   "/hsl-parkandride-map": {
     "source": "hslparkandride://",
     "headers": {
