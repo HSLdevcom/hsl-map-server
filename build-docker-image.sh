@@ -13,5 +13,5 @@ LATEST_IMAGE="hsldevcom/hsl-map-server:latest"
 docker build --tag=$SNAP_IMAGE .
 docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_AUTH
 docker push $SNAP_IMAGE
-docker tag $SNAP_IMAGE $LATEST_IMAGE
+docker tag -f $SNAP_IMAGE $LATEST_IMAGE
 docker push $LATEST_IMAGE
