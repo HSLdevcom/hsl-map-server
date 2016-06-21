@@ -2,8 +2,9 @@ FROM node:4
 MAINTAINER Reittiopas version: 0.1
 
 ENV FONTSTACK_PASSWORD ""
-ENV OTP_URL dev.digitransit.fi
-ENV OTP_PORT 80
+ENV HSL_OTP_URL api.digitransit.fi/routing/v1/routers/hsl/index/graphql
+ENV FINLAND_OTP_URL api.digitransit.fi/routing/v1/routers/finland/index/graphql
+ENV WALTTI_OTP_URL api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 ENV WORK=/opt/hsl-map-server
 
 WORKDIR ${WORK}
