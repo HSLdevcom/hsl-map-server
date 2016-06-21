@@ -26,31 +26,31 @@ module.exports = {
     }
   },
   "/hsl-citybike-map": {
-    "source": `otpcitybikes://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/hsl/index/graphql`,
+    "source": `otpcitybikes://${process.env.HSL_OTP_URL}`,
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
   },
   "/hsl-stop-map": {
-    "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/hsl/index/graphql`,
+    "source": `otpstops://${process.env.HSL_OTP_URL}`,
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
   },
   "/hsl-route-map": {
-    "source": `otproutes://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/hsl/index/graphql`,
+    "source": `otproutes://${process.env.HSL_OTP_URL}`,
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
   },
   "/finland-stop-map": {
-    "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/finland/index/graphql`,
+    "source": `otpstops://${process.env.FINLAND_OTP_URL}`,
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
   },
   "/waltti-stop-map": {
-    "source": `otpstops://${process.env.OTP_URL}:${process.env.OTP_PORT}/otp/routers/waltti/index/graphql`,
+    "source": `otpstops://${process.env.WALTTI_OTP_URL}`,
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
