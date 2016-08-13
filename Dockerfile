@@ -10,10 +10,13 @@ ENV WORK=/opt/hsl-map-server
 WORKDIR ${WORK}
 
 RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list
+RUN echo "deb http://http.debian.net/debian testing main" >> /etc/apt/sources.list
+
 
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y -t jessie-backports libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y -t jessie-backports libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y -t testing libstdc++6
 
 RUN mkdir -p ${WORK}
 
