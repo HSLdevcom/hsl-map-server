@@ -26,7 +26,7 @@
     "tilelive-http": "^0.10.0",
     "tilelive-otp-citybikes": "^0.0.2",
     "tilelive-otp-routes": "^0.1.1",
-    "tilelive-otp-stops": "^0.1.1",
+    "tilelive-otp-stops": "^0.3.0",
     "tilelive-vector": "^3.9.3",
     "tilelive-xray": "^0.2.0"
   }
