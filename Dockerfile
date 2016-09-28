@@ -30,8 +30,6 @@ RUN curl https://osm2vectortiles-downloads.os.zhdk.cloud.switch.ch/v2.0/extracts
 
 RUN npm install https://github.com/hannesj/tilelive-gl.git
 
-RUN npm install https://github.com/hannesj/node-mbtiles.git
-
 RUN npm install https://github.com/HSLdevcom/hsl-map-style.git
 
 RUN cd ${WORK}/node_modules/hsl-map-style && \
