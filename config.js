@@ -9,7 +9,7 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {},
-      "style": require("hsl-map-style")
+      "style": require("hsl-map-style/hsl-gl-map-v9-no-icons.json")
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
