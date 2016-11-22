@@ -26,7 +26,8 @@ RUN npm install
 
 #TODO: Replace when https://github.com/osm2vectortiles/osm2vectortiles/issues/114 is fixed
 #RUN curl http://koti.kapsi.fi/~hannes/tiles.v7.mbtiles > finland.mbtiles
-RUN curl https://osm2vectortiles-downloads.os.zhdk.cloud.switch.ch/v2.0/extracts/finland.mbtiles > finland.mbtiles
+#RUN curl https://osm2vectortiles-downloads.os.zhdk.cloud.switch.ch/v2.0/extracts/finland.mbtiles > finland.mbtiles
+RUN curl https://hsltiles.blob.core.windows.net/tiles/tiles.mbtiles > finland.mbtiles
 
 RUN npm install https://github.com/hannesj/tilelive-gl.git
 
