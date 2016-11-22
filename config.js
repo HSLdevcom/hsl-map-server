@@ -28,43 +28,43 @@ module.exports = {
   "/hsl-citybike-map": {
     "source": `otpcitybikes://${process.env.HSL_OTP_URL}`,
     "headers": {
-      "Cache-Control": "public,max-age=3600"
+      "Cache-Control": "public,max-age=172800"
     }
   },
   "/hsl-stop-map": {
     "source": `otpstops://${process.env.HSL_OTP_URL}`,
     "headers": {
-      "Cache-Control": "public,max-age=3600"
+      "Cache-Control": "public,max-age=43200"
     }
   },
   "/hsl-route-map": {
     "source": `otproutes://${process.env.HSL_OTP_URL}`,
     "headers": {
-      "Cache-Control": "public,max-age=3600"
+      "Cache-Control": "public,max-age=43200"
     }
   },
   "/finland-stop-map": {
     "source": `otpstops://${process.env.FINLAND_OTP_URL}`,
     "headers": {
-      "Cache-Control": "public,max-age=3600"
+      "Cache-Control": "public,max-age=43200"
     }
   },
   "/waltti-stop-map": {
     "source": `otpstops://${process.env.WALTTI_OTP_URL}`,
     "headers": {
-      "Cache-Control": "public,max-age=3600"
+      "Cache-Control": "public,max-age=43200"
     }
   },
   "/hsl-parkandride-map": {
     "source": "hslparkandride://",
     "headers": {
-      "Cache-Control": "public,max-age=3600"
+      "Cache-Control": "public,max-age=172800"
     }
   },
   "/hsl-ticket-sales-map": {
     "source": "hslticketsales://",
     "headers": {
-      "Cache-Control": "public,max-age=3600"
+      "Cache-Control": "public,max-age=604800"
     }
   }
 }
