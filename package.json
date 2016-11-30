@@ -24,7 +24,7 @@
     "tilelive-hsl-parkandride": "^0.0.5",
     "tilelive-hsl-ticket-sales": "0.0.1",
     "tilelive-http": "^0.10.0",
-    "tilelive-otp-citybikes": "^0.0.2",
+    "tilelive-otp-citybikes": "^0.0.3",
     "tilelive-otp-routes": "^0.1.1",
     "tilelive-otp-stops": "^0.3.3",
     "tilelive-vector": "^3.9.3",
