@@ -35,28 +35,18 @@ RUN npm install https://github.com/HSLdevcom/hsl-map-style.git
 
 RUN cd ${WORK}/node_modules/hsl-map-style && \
   sed -i -e "s#http://localhost:8000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v9-no-icons.json && \
-  sed -i -e 's#api.digitransit.fi/map/v1/#localhost:8080/#' hsl-gl-map-v9-no-icons.json && \
+  sed -i -e 's#api.digitransit.fi/map/v1/#hsl-map-server:8080/#' hsl-gl-map-v9-no-icons.json && \
   sed -i -e "s#http://localhost:8000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v9.json && \
-  sed -i -e 's#api.digitransit.fi/map/v1/#localhost:8080/#' hsl-gl-map-v9.json
+  sed -i -e 's#api.digitransit.fi/map/v1/#hsl-map-server:8080/#' hsl-gl-map-v9.json
 
 EXPOSE 8080
 
 RUN chmod -R 777 ${WORK}
 
 RUN mkdir /.forever && chmod -R 777 /.forever
-USER 9999
+#USER 9999
 
-CMD cd ${WORK}/node_modules/hsl-map-style && \
-  unzip -P ${FONTSTACK_PASSWORD} fontstack.zip && \
-  cd ${WORK} && \
-  Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
-  sleep 15 && \
-  DISPLAY=":10" node_modules/.bin/forever start -c "node --harmony" \
-  node_modules/tessera/bin/tessera.js --port 8080 --config config.js \
-  -r ${WORK}/node_modules/tilelive-otp-citybikes/ \
-  -r ${WORK}/node_modules/tilelive-otp-stops/ \
-  -r ${WORK}/node_modules/tilelive-otp-routes/ \
-  -r ${WORK}/node_modules/tilelive-gl/ \
-  -r ${WORK}/node_modules/tilelive-hsl-parkandride \
-  -r ${WORK}/node_modules/tilelive-hsl-ticket-sales \
-  && sleep 10 && node_modules/.bin/forever --fifo logs 0
+ADD run.sh /usr/local/bin/
+
+
+CMD /usr/local/bin/run.sh
