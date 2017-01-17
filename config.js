@@ -9,7 +9,7 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {},
-      "style": require("hsl-map-style").generateStyle({ lang: ["fi", "sv"]} )
+      "style": require("hsl-map-style").generateStyle({ lang: "fi" } )
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -19,7 +19,27 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {layerTileSize: 256},
-      "style": require("hsl-map-style").generateStyle({ lang: ["fi", "sv"], extensions: ["icons"]} )
+      "style": require("hsl-map-style").generateStyle({ lang: "fi", extensions: ["icons"]} )
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/hsl-map-sv": {
+    "source": {
+      "protocol": "gl:",
+      "query": {},
+      "style": require("hsl-map-style").generateStyle({ lang: "sv" } )
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/hsl-map-sv-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": {layerTileSize: 256},
+      "style": require("hsl-map-style").generateStyle({ lang: "sv", extensions: ["icons"] } )
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
