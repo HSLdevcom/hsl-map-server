@@ -1,3 +1,6 @@
+const sourcesUrl = "hsl-map-server:8080/";
+const glyphsUrl = `file://${process.env.WORK}/node_modules/hsl-map-style/`;
+
 module.exports = {
   "/hsl-vector-map": {
     "source": "mbtiles://./finland.mbtiles",
@@ -9,7 +12,7 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {},
-      "style": require("hsl-map-style").generateStyle({ lang: "fi" } )
+      "style": require("hsl-map-style").generateStyle({ lang: "fi", sourcesUrl, glyphsUrl })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -19,7 +22,7 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {layerTileSize: 256},
-      "style": require("hsl-map-style").generateStyle({ lang: "fi", extensions: ["icons"]} )
+      "style": require("hsl-map-style").generateStyle({ lang: "fi", sourcesUrl, glyphsUrl, extensions: ["icons"] })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -29,7 +32,7 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {},
-      "style": require("hsl-map-style").generateStyle({ lang: "sv" } )
+      "style": require("hsl-map-style").generateStyle({ lang: "sv", sourcesUrl, glyphsUrl })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -39,7 +42,7 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {layerTileSize: 256},
-      "style": require("hsl-map-style").generateStyle({ lang: "sv", extensions: ["icons"] } )
+      "style": require("hsl-map-style").generateStyle({ lang: "sv", sourcesUrl, glyphsUrl, extensions: ["icons"] })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"

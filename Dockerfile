@@ -33,12 +33,6 @@ RUN npm install https://github.com/hannesj/tilelive-gl.git
 
 RUN npm install https://github.com/HSLdevcom/hsl-map-style.git
 
-RUN cd ${WORK}/node_modules/hsl-map-style && \
-  sed -i -e "s#http://localhost:8000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v9-no-icons.json && \
-  sed -i -e 's#api.digitransit.fi/map/v1/#hsl-map-server:8080/#' hsl-gl-map-v9-no-icons.json && \
-  sed -i -e "s#http://localhost:8000/#file://${WORK}/node_modules/hsl-map-style/#" hsl-gl-map-v9.json && \
-  sed -i -e 's#api.digitransit.fi/map/v1/#hsl-map-server:8080/#' hsl-gl-map-v9.json
-
 EXPOSE 8080
 
 RUN chmod -R 777 ${WORK}
