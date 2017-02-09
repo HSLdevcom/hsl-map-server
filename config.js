@@ -48,6 +48,26 @@ module.exports = {
       "Cache-Control": "public,max-age=604800"
     }
   },
+  "/hsl-map-fi-sv": {
+    "source": {
+      "protocol": "gl:",
+      "query": {},
+      "style": require("hsl-map-style").generateStyle({ lang: ["fi", "sv"], sourcesUrl, glyphsUrl })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/hsl-map-fi-sv-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": {layerTileSize: 256},
+      "style": require("hsl-map-style").generateStyle({ lang: ["fi", "sv"], sourcesUrl, glyphsUrl, extensions: ["icons"] })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
   "/hsl-citybike-map": {
     "source": `otpcitybikes://${process.env.HSL_OTP_URL}`,
     "headers": {
