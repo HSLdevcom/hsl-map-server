@@ -29,10 +29,6 @@ RUN npm install
 #RUN curl https://osm2vectortiles-downloads.os.zhdk.cloud.switch.ch/v2.0/extracts/finland.mbtiles > finland.mbtiles
 RUN curl https://hsltiles.blob.core.windows.net/tiles/tiles.mbtiles > finland.mbtiles
 
-RUN npm install https://github.com/hannesj/tilelive-gl.git
-
-RUN npm install https://github.com/HSLdevcom/hsl-map-style.git
-
 EXPOSE 8080
 
 RUN chmod -R 777 ${WORK}

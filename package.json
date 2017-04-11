@@ -18,9 +18,11 @@
   "homepage": "https://github.com/HSLdevcom/hsl-map-server#readme",
   "dependencies": {
     "forever": "^0.15.2",
+    "hsl-map-style": "hsldevcom/hsl-map-style",
     "mbtiles": "hannesj/node-mbtiles#patch-1",
     "tessera": "^0.10.0",
     "tilejson": "^1.0.1",
+    "tilelive-gl": "hsldevcom/tilelive-gl",
     "tilelive-hsl-parkandride": "^0.0.5",
     "tilelive-hsl-ticket-sales": "0.0.1",
     "tilelive-http": "^0.10.0",
