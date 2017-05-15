@@ -12,7 +12,11 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {},
-      "style": require("hsl-map-style").generateStyle({ lang: "fi", sourcesUrl, glyphsUrl })
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { icons: { enabled: true } } 
+      })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -22,7 +26,11 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {layerTileSize: 256},
-      "style": require("hsl-map-style").generateStyle({ lang: "fi", sourcesUrl, glyphsUrl, extensions: ["icons"] })
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { icons: { enabled: true } }
+      })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -32,7 +40,11 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {},
-      "style": require("hsl-map-style").generateStyle({ lang: "sv", sourcesUrl, glyphsUrl })
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { text_sv: { enabled: true } }
+      })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -42,7 +54,11 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {layerTileSize: 256},
-      "style": require("hsl-map-style").generateStyle({ lang: "sv", sourcesUrl, glyphsUrl, extensions: ["icons"] })
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { icons: { enabled: true }, text_sv: { enabled: true } }
+      })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -52,7 +68,11 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {},
-      "style": require("hsl-map-style").generateStyle({ lang: ["fi", "sv"], sourcesUrl, glyphsUrl })
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { text_fisv: { enabled: true } }
+      })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
@@ -62,7 +82,11 @@ module.exports = {
     "source": {
       "protocol": "gl:",
       "query": {layerTileSize: 256},
-      "style": require("hsl-map-style").generateStyle({ lang: ["fi", "sv"], sourcesUrl, glyphsUrl, extensions: ["icons"] })
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { icons: { enabled: true }, text_fisv: { enabled: true } }
+      })
     },
     "headers": {
       "Cache-Control": "public,max-age=604800"
