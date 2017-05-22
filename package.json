@@ -20,7 +20,7 @@
     "forever": "^0.15.2",
     "hsl-map-style": "hsldevcom/hsl-map-style",
     "mbtiles": "hannesj/node-mbtiles#patch-1",
-    "tessera": "^0.10.0",
+    "tessera": "^0.10.1",
     "tilejson": "^1.0.1",
     "tilelive-gl": "hsldevcom/tilelive-gl",
     "tilelive-hsl-parkandride": "^0.0.5",
