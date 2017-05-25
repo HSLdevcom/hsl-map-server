@@ -14,8 +14,7 @@ module.exports = {
       "query": {},
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
-        glyphsUrl,
-        components: { icons: { enabled: true } } 
+        glyphsUrl
       })
     },
     "headers": {
