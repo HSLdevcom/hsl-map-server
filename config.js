@@ -5,7 +5,7 @@ module.exports = {
   "/map/v1/hsl-vector-map": {
     "source": "mbtiles://./finland.mbtiles",
     "headers": {
-      "Cache-Control": "public,max-age=86400"
+      "Cache-Control": "public,max-age=3600"
     }
   },
   "/map/v1/hsl-map": {
@@ -95,7 +95,7 @@ module.exports = {
   "/map/v1/hsl-citybike-map": {
     "source": `otpcitybikes://${process.env.HSL_OTP_URL}`,
     "headers": {
-      "Cache-Control": "public,max-age=172800"
+      "Cache-Control": "public,max-age=43200"
     }
   },
   "/map/v1/hsl-stop-map": {
