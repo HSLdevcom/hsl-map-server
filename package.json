@@ -22,7 +22,7 @@
     "mbtiles": "hannesj/node-mbtiles#patch-1",
     "tessera": "^0.10.1",
     "tilejson": "^1.0.1",
-    "tilelive-gl": "hsldevcom/tilelive-gl#663d088e8ce84ab183d4f0c8dc7040e3bbbcdf4b",
+    "tilelive-gl": "hsldevcom/tilelive-gl#2f61ec0da7e5b13ca547fa5350905f3c2a688813",
     "tilelive-hsl-parkandride": "^0.0.5",
     "tilelive-hsl-ticket-sales": "0.0.1",
     "tilelive-http": "^0.10.0",
