@@ -1,0 +1,12 @@
+sudo: required
+branches:
+  only:
+    - master
+
+services: docker
+install: true
+
+language: C
+
+script: ./travis-build.sh
+
