@@ -8,11 +8,8 @@ ENV WALTTI_OTP_URL api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
-WORKDIR ${WORK}
-
 RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list
 RUN echo "deb http://http.debian.net/debian testing main" >> /etc/apt/sources.list
-
 
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant \
@@ -20,10 +17,13 @@ RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y -t testing libstdc++6
 
 RUN mkdir -p ${WORK}
+WORKDIR ${WORK}
 
-ADD . ${WORK}
+COPY yarn.lock ${WORK}
+COPY package.json ${WORK}
+RUN yarn install
 
-RUN npm install
+COPY . ${WORK}
 
 #TODO: Replace when https://github.com/osm2vectortiles/osm2vectortiles/issues/114 is fixed
 #RUN curl http://koti.kapsi.fi/~hannes/tiles.v7.mbtiles > finland.mbtiles
