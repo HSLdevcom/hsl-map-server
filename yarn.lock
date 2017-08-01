@@ -3099,17 +3099,17 @@ tilelive-gl@hsldevcom/tilelive-gl#2f61ec0da7e5b13ca547fa5350905f3c2a688813:
     sphericalmercator "^1.0.5"
     url "^0.11.0"
 
-tilelive-hsl-parkandride@^0.0.5:
+tilelive-hsl-parkandride@HSLdevcom/tilelive-hsl-parkandride:
   version "0.0.5"
-  resolved "https://registry.yarnpkg.com/tilelive-hsl-parkandride/-/tilelive-hsl-parkandride-0.0.5.tgz#2b72720253d1a980848e4e9249ec1d419f336700"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-hsl-parkandride/tar.gz/3e3cf8c5f20af78f679c2abb39231b522558b83d"
   dependencies:
     geojson-vt "^2.4.0"
     requestretry "^1.6.0"
     vt-pbf "^2.0.2"
 
-tilelive-hsl-ticket-sales@HSLdevcom/tilelive-hsl-ticket-sales#253c00f50b70832acf8ef6dc32a0869b23e654ff:
+tilelive-hsl-ticket-sales@HSLdevcom/tilelive-hsl-ticket-sales:
   version "0.0.1"
-  resolved "https://codeload.github.com/HSLdevcom/tilelive-hsl-ticket-sales/tar.gz/253c00f50b70832acf8ef6dc32a0869b23e654ff"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-hsl-ticket-sales/tar.gz/b9d2b35619cb77f2da7cbff42455a3df24661027"
   dependencies:
     geojson-vt "^2.1.8"
     requestretry "^1.6.0"
@@ -3128,9 +3128,9 @@ tilelive-modules@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/tilelive-modules/-/tilelive-modules-0.2.1.tgz#b5cc159c6e7b4ba7059a839e213c9584dacc3f5f"
 
-tilelive-otp-citybikes@^0.0.3:
+tilelive-otp-citybikes@HSLdevcom/tilelive-otp-citybikes:
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/tilelive-otp-citybikes/-/tilelive-otp-citybikes-0.0.3.tgz#534c866cf92a36e99c32be4bd3b48e4d195fa00d"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-citybikes/tar.gz/86c99e3f67d51ed130f3b8dad7c2a4052a3a7a65"
   dependencies:
     geojson-vt "^2.1.8"
     requestretry "^1.6.0"
@@ -3146,9 +3146,9 @@ tilelive-otp-routes@HSLdevcom/tilelive-otp-routes:
     requestretry "^1.6.0"
     vt-pbf "^2.0.2"
 
-tilelive-otp-stops@^0.3.3:
+tilelive-otp-stops@HSLdevcom/tilelive-otp-stops:
   version "0.3.3"
-  resolved "https://registry.yarnpkg.com/tilelive-otp-stops/-/tilelive-otp-stops-0.3.3.tgz#f405fa9e2f1bd70fd797e6aba680122898a65df4"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-stops/tar.gz/a80eddf0c0114c1e74da0c28341305e0515dce1a"
   dependencies:
     geojson-vt "^2.4.0"
     lodash "^4.15.0"
