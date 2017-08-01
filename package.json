@@ -23,12 +23,12 @@
     "tessera": "^0.10.1",
     "tilejson": "^1.0.1",
     "tilelive-gl": "hsldevcom/tilelive-gl#2f61ec0da7e5b13ca547fa5350905f3c2a688813",
-    "tilelive-hsl-parkandride": "^0.0.5",
-    "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales#253c00f50b70832acf8ef6dc32a0869b23e654ff",
+    "tilelive-hsl-parkandride": "HSLdevcom/tilelive-hsl-parkandride",
+    "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales",
     "tilelive-http": "^0.10.0",
-    "tilelive-otp-citybikes": "^0.0.3",
+    "tilelive-otp-citybikes": "HSLdevcom/tilelive-otp-citybikes",
     "tilelive-otp-routes": "HSLdevcom/tilelive-otp-routes",
-    "tilelive-otp-stops": "^0.3.3",
+    "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops",
     "tilelive-vector": "^3.9.3",
     "tilelive-xray": "^0.2.0"
   }
