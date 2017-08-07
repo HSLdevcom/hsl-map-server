@@ -4,6 +4,7 @@ set +e
 # Set these environment variables
 #DOCKER_USER // dockerhub credentials
 #DOCKER_AUTH
+#FONTSTACK_PASSWORD
 
 ORG=${ORG:-hsldevcom}
 DOCKER_TAG=${TRAVIS_BUILD_ID:-latest}
@@ -40,7 +41,7 @@ echo Building $DOCKER_IMAGE
 docker build --tag=$DOCKER_IMAGE -f Dockerfile .
 
 echo Running $DOCKER_IMAGE
-docker run -d --rm -p 8080:8080 --name hsl-map-server $DOCKER_IMAGE
+docker run -d --rm -p 8080:8080 --name hsl-map-server -e FONTSTACK_PASSWORD=$FONTSTACK_PASSWORD $DOCKER_IMAGE
 sleep 30
 
 test http://localhost:8080/map/v1/hsl-map/14/9326/4739.png 50000
