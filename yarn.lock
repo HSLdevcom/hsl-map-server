@@ -1778,10 +1778,6 @@ lodash.escape@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
-lodash.groupby@^4.2.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
-
 lodash.isarguments@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -1826,10 +1822,6 @@ lodash.templatesettings@^3.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
-
-lodash.zip@^4.0.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lodash.zip/-/lodash.zip-4.2.0.tgz#ec6662e4896408ed4ab6c542a3990b72cc080020"
 
 lodash@^2.4.1:
   version "2.4.2"
@@ -3133,16 +3125,6 @@ tilelive-otp-citybikes@HSLdevcom/tilelive-otp-citybikes:
   resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-citybikes/tar.gz/86c99e3f67d51ed130f3b8dad7c2a4052a3a7a65"
   dependencies:
     geojson-vt "^2.1.8"
-    requestretry "^1.6.0"
-    vt-pbf "^2.0.2"
-
-tilelive-otp-routes@HSLdevcom/tilelive-otp-routes:
-  version "0.1.2"
-  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-routes/tar.gz/42aa91c2705279d4576aaa88a82104c4229a5d0e"
-  dependencies:
-    geojson-vt "^2.1.8"
-    lodash.groupby "^4.2.0"
-    lodash.zip "^4.0.0"
     requestretry "^1.6.0"
     vt-pbf "^2.0.2"
 

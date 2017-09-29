@@ -27,7 +27,6 @@
     "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales",
     "tilelive-http": "^0.10.0",
     "tilelive-otp-citybikes": "HSLdevcom/tilelive-otp-citybikes",
-    "tilelive-otp-routes": "HSLdevcom/tilelive-otp-routes",
     "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops",
     "tilelive-vector": "^3.9.3",
     "tilelive-xray": "^0.2.0"
