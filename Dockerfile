@@ -13,8 +13,8 @@ RUN echo "deb http://http.debian.net/debian testing main" >> /etc/apt/sources.li
 
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y -t jessie-backports libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y -t testing libstdc++6
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y libstdc++6
 
 RUN mkdir -p ${WORK}
 WORKDIR ${WORK}
