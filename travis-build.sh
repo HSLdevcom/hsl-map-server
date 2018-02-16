@@ -1,5 +1,5 @@
 #!/bin/bash
-set +e
+set -e
 
 # Set these environment variables
 #DOCKER_USER // dockerhub credentials
