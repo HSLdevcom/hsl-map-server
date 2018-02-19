@@ -8,12 +8,10 @@ ENV WALTTI_OTP_URL api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
-RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list
 RUN echo "deb http://http.debian.net/debian testing main" >> /etc/apt/sources.list
-
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y -t jessie-backports libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y -t testing libstdc++6
 
 RUN mkdir -p ${WORK}
