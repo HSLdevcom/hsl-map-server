@@ -3128,9 +3128,9 @@ tilelive-modules@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/tilelive-modules/-/tilelive-modules-0.2.1.tgz#b5cc159c6e7b4ba7059a839e213c9584dacc3f5f"
 
-tilelive-otp-citybikes@HSLdevcom/tilelive-otp-citybikes:
+tilelive-otp-citybikes@HSLdevcom/tilelive-otp-citybikes#3f403de9859415146142f4f0b371ee258332c864:
   version "0.0.3"
-  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-citybikes/tar.gz/86c99e3f67d51ed130f3b8dad7c2a4052a3a7a65"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-citybikes/tar.gz/3f403de9859415146142f4f0b371ee258332c864"
   dependencies:
     geojson-vt "^2.1.8"
     requestretry "^1.6.0"
