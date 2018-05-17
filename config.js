@@ -98,7 +98,7 @@ module.exports = {
     }
   },
   "/map/v1/waltti-citybike-map": {
-    "source": `otpcitybikes://${process.env.DEV_WALTTI_OTP_URL}`,
+    "source": `otpcitybikes://${process.env.WALTTI_OTP_URL}`,
     "headers": {
       "Cache-Control": "public,max-age=43200"
     }

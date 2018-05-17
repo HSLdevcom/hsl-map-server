@@ -5,7 +5,6 @@ ENV FONTSTACK_PASSWORD ""
 ENV HSL_OTP_URL api.digitransit.fi/routing/v1/routers/hsl/index/graphql
 ENV FINLAND_OTP_URL api.digitransit.fi/routing/v1/routers/finland/index/graphql
 ENV WALTTI_OTP_URL api.digitransit.fi/routing/v1/routers/waltti/index/graphql
-ENV DEV_WALTTI_OTP_URL dev-api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
