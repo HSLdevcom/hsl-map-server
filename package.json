@@ -20,16 +20,16 @@
     "forever": "^0.15.2",
     "hsl-map-style": "hsldevcom/hsl-map-style",
     "mbtiles": "hannesj/node-mbtiles#patch-1",
-    "tessera": "^0.10.1",
+    "tessera": "^0.12.0",
     "tilejson": "^1.0.1",
     "tilelive-gl": "hsldevcom/tilelive-gl#2f61ec0da7e5b13ca547fa5350905f3c2a688813",
     "tilelive-hsl-parkandride": "HSLdevcom/tilelive-hsl-parkandride",
     "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales",
-    "tilelive-http": "^0.10.0",
+    "tilelive-http": "^0.14.0",
     "tilelive-otp-citybikes": "HSLdevcom/tilelive-otp-citybikes#3f403de9859415146142f4f0b371ee258332c864",
     "tilelive-otp-routes": "HSLdevcom/tilelive-otp-routes",
     "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops",
     "tilelive-vector": "^3.9.3",
-    "tilelive-xray": "^0.2.0"
+    "tilelive-xray": "^0.4.0"
   }
 }
