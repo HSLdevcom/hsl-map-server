@@ -11,7 +11,6 @@ DOCKER_TAG=${TRAVIS_BUILD_ID:-latest}
 DOCKER_IMAGE=$ORG/hsl-map-server:${DOCKER_TAG}
 DOCKER_IMAGE_LATEST=$ORG/hsl-map-server:latest
 DOCKER_IMAGE_PROD=$ORG/hsl-map-server:prod
-DOCKER_IMAGE_TEST=$ORG/hsl-map-server:test
 
 function test {
   URL=$1
@@ -63,7 +62,7 @@ echo Stopping $DOCKER_IMAGE
 docker stop hsl-map-server
 
 docker login -u $DOCKER_USER -p $DOCKER_AUTH
-docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TEST
-docker push $DOCKER_IMAGE_TEST
+docker tag $DOCKER_IMAGE $DOCKER_IMAGE_LATEST
+docker push $DOCKER_IMAGE_LATEST
 
 echo Build completed
