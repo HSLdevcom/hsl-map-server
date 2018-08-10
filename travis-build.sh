@@ -62,10 +62,8 @@ test http://localhost:8080/map/v1/hsl-ticket-sales-map/14/9326/4739.pbf 500
 echo Stopping $DOCKER_IMAGE
 docker stop hsl-map-server
 
-if [ "${TRAVIS_PULL_REQUEST}" == "true" ]; then
-  docker login -u $DOCKER_USER -p $DOCKER_AUTH
-  docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TEST
-  docker push $DOCKER_IMAGE_TEST
-fi
+docker login -u $DOCKER_USER -p $DOCKER_AUTH
+docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TEST
+docker push $DOCKER_IMAGE_TEST
 
 echo Build completed
