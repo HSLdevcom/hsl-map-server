@@ -11,6 +11,7 @@ DOCKER_TAG=${TRAVIS_BUILD_ID:-latest}
 DOCKER_IMAGE=$ORG/hsl-map-server:${DOCKER_TAG}
 DOCKER_IMAGE_LATEST=$ORG/hsl-map-server:latest
 DOCKER_IMAGE_PROD=$ORG/hsl-map-server:prod
+DOCKER_IMAGE_TEST=$ORG/hsl-map-server:test
 
 function test {
   URL=$1
@@ -60,5 +61,11 @@ test http://localhost:8080/map/v1/hsl-ticket-sales-map/14/9326/4739.pbf 500
 
 echo Stopping $DOCKER_IMAGE
 docker stop hsl-map-server
+
+if [ "${TRAVIS_PULL_REQUEST}" == "true" ]; then
+  docker login -u $DOCKER_USER -p $DOCKER_AUTH
+  docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TEST
+  docker push $DOCKER_IMAGE_TEST
+fi
 
 echo Build completed
