@@ -103,6 +103,12 @@ module.exports = {
       "Cache-Control": "public,max-age=43200"
     }
   },
+  "/map/v1/finland-citybike-map": {
+    "source": `otpcitybikes://${process.env.FINLAND_OTP_URL}`,
+    "headers": {
+      "Cache-Control": "public,max-age=43200"
+    }
+  },
   "/map/v1/hsl-stop-map": {
     "source": `otpstops://${process.env.HSL_OTP_URL}`,
     "headers": {
