@@ -115,12 +115,6 @@ module.exports = {
       "Cache-Control": "public,max-age=43200"
     }
   },
-  "/map/v1/hsl-route-map": {
-    "source": `otproutes://${process.env.HSL_OTP_URL}`,
-    "headers": {
-      "Cache-Control": "public,max-age=43200"
-    }
-  },
   "/map/v1/finland-stop-map": {
     "source": `otpstops://${process.env.FINLAND_OTP_URL}`,
     "headers": {
