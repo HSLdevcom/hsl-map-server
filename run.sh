@@ -2,8 +2,8 @@
 
 #workaround for azure DNS issue
 
-if [ "$EUID" -eq 0 ]
-  then echo -e "\nsearch marathon.l4lb.thisdcos.directory" >> /etc/resolv.conf
+if [ -n "$MESOS_CONTAINER_NAME"  ]; then 
+  echo -e "\nsearch marathon.l4lb.thisdcos.directory" >> /etc/resolv.conf
 fi
 
 #start map server
