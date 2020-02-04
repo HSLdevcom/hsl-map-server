@@ -1,4 +1,4 @@
-FROM node:12-buster
+FROM node:10-buster
 MAINTAINER Reittiopas version: 0.1
 
 ENV FONTSTACK_PASSWORD ""
