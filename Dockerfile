@@ -1,4 +1,4 @@
-FROM node:6-stretch
+FROM node:12-buster
 MAINTAINER Reittiopas version: 0.1
 
 ENV FONTSTACK_PASSWORD ""
@@ -9,16 +9,16 @@ ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
 RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa libstdc++6
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa libstdc++6 cmake
 
 RUN mkdir -p ${WORK}
 WORKDIR ${WORK}
 
-COPY yarn.lock ${WORK}
+COPY . ${WORK}
+
 COPY package.json ${WORK}
 RUN yarn install
 
-COPY . ${WORK}
 
 RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland.mbtiles
 EXPOSE 8080
