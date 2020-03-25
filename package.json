@@ -18,7 +18,7 @@
   "homepage": "https://github.com/HSLdevcom/hsl-map-server#readme",
   "dependencies": {
     "forever": "^0.15.2",
-    "hsl-map-style": "hsldevcom/hsl-map-style#ca06df94c57cdc6aaa68696141879847955b76ea",
+    "hsl-map-style": "hsldevcom/hsl-map-style#b64cdd46046e485b2ffbf4f4890f768b1daf6ad4",
     "mbtiles": "hannesj/node-mbtiles#patch-1",
     "tessera": "^0.12.0",
     "tilejson": "^1.0.1",
