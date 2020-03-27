@@ -26,8 +26,8 @@
     "tilelive-hsl-parkandride": "HSLdevcom/tilelive-hsl-parkandride",
     "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales",
     "tilelive-http": "^0.14.0",
-    "tilelive-otp-citybikes": "HSLdevcom/tilelive-otp-citybikes#3f403de9859415146142f4f0b371ee258332c864",
-    "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops",
+    "tilelive-otp-citybikes": "HSLdevcom/tilelive-otp-citybikes#493589481e96e32928a3f64eb6701ec1650334ff",
+    "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops#3f0cac4ace1b6b506424ea0372c46ab190652914",
     "tilelive-vector": "^3.9.3",
     "tilelive-xray": "^0.4.0"
   }
