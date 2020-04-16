@@ -11,6 +11,7 @@ DOCKER_TAG=${TRAVIS_BUILD_ID:-latest}
 DOCKER_IMAGE=$ORG/hsl-map-server:${DOCKER_TAG}
 DOCKER_IMAGE_LATEST=$ORG/hsl-map-server:latest
 DOCKER_IMAGE_PROD=$ORG/hsl-map-server:prod
+DOCKER_IMAGE_DEV=$ORG/hsl-map-server:dev
 
 function test {
   URL=$1
@@ -63,11 +64,17 @@ docker stop hsl-map-server
 
 if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
   docker login -u $DOCKER_USER -p $DOCKER_AUTH
-  docker push $DOCKER_IMAGE
-  docker tag $DOCKER_IMAGE $DOCKER_IMAGE_LATEST
-  docker push $DOCKER_IMAGE_LATEST
-  docker tag $DOCKER_IMAGE $DOCKER_IMAGE_PROD
-  docker push $DOCKER_IMAGE_PROD
+  if [ "${TRAVIS_BRANCH}" == "develop" ]; then
+    docker tag $DOCKER_IMAGE $DOCKER_IMAGE_DEV
+    docker push $DOCKER_IMAGE_DEV
+    echo Pushed $DOCKER_IMAGE_DEV
+  else
+    docker push $DOCKER_IMAGE
+    docker tag $DOCKER_IMAGE $DOCKER_IMAGE_LATEST
+    docker push $DOCKER_IMAGE_LATEST
+    docker tag $DOCKER_IMAGE $DOCKER_IMAGE_PROD
+    docker push $DOCKER_IMAGE_PROD
+  fi
 fi
 
 echo Build completed
