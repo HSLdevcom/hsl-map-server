@@ -3128,9 +3128,9 @@ tilelive-modules@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/tilelive-modules/-/tilelive-modules-0.2.1.tgz#b5cc159c6e7b4ba7059a839e213c9584dacc3f5f"
 
-tilelive-otp-citybikes@HSLdevcom/tilelive-otp-citybikes#3f403de9859415146142f4f0b371ee258332c864:
+tilelive-otp-citybikes@HSLdevcom/tilelive-otp-citybikes#493589481e96e32928a3f64eb6701ec1650334ff:
   version "0.0.3"
-  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-citybikes/tar.gz/3f403de9859415146142f4f0b371ee258332c864"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-citybikes/tar.gz/493589481e96e32928a3f64eb6701ec1650334ff"
   dependencies:
     geojson-vt "^2.1.8"
     requestretry "^1.6.0"
@@ -3148,7 +3148,7 @@ tilelive-otp-routes@HSLdevcom/tilelive-otp-routes:
 
 tilelive-otp-stops@HSLdevcom/tilelive-otp-stops:
   version "0.3.3"
-  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-stops/tar.gz/a80eddf0c0114c1e74da0c28341305e0515dce1a"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-stops/tar.gz/3f0cac4ace1b6b506424ea0372c46ab190652914"
   dependencies:
     geojson-vt "^2.4.0"
     lodash "^4.15.0"
