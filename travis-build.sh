@@ -12,6 +12,7 @@ DOCKER_IMAGE=$ORG/hsl-map-server:${DOCKER_TAG}
 DOCKER_IMAGE_LATEST=$ORG/hsl-map-server:latest
 DOCKER_IMAGE_PROD=$ORG/hsl-map-server:prod
 DOCKER_IMAGE_DEV=$ORG/hsl-map-server:dev
+DOCKER_IMAGE_NEXT=$ORG/hsl-map-server:next
 
 function test {
   URL=$1
@@ -68,6 +69,10 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     docker tag $DOCKER_IMAGE $DOCKER_IMAGE_DEV
     docker push $DOCKER_IMAGE_DEV
     echo Pushed $DOCKER_IMAGE_DEV
+  elif [ "${TRAVIS_BRANCH}" == "next" ]; then
+    docker tag $DOCKER_IMAGE $DOCKER_IMAGE_NEXT
+    docker push $DOCKER_IMAGE_NEXT
+    echo Pushed $DOCKER_IMAGE_NEXT
   else
     docker push $DOCKER_IMAGE
     docker tag $DOCKER_IMAGE $DOCKER_IMAGE_LATEST
