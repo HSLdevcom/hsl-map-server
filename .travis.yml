@@ -14,6 +14,8 @@ notifications:
     on_start:   never
     on_cancel:  never
     on_error:   never
+    template:
+      - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} *%{result}* in %{duration}"
 
 services: docker
 install: true
