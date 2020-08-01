@@ -1,4 +1,4 @@
-FROM node:6-stretch
+FROM node:10-stretch
 MAINTAINER Reittiopas version: 0.1
 
 ENV FONTSTACK_PASSWORD ""
