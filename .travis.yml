@@ -4,6 +4,7 @@ branches:
     - master
     - develop
     - next
+    - next-prod
 
 notifications:
   slack:
