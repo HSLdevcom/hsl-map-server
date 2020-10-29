@@ -7,10 +7,14 @@ set -e
 #FONTSTACK_PASSWORD
 
 ORG=${ORG:-hsldevcom}
-DOCKER_TAG=${TRAVIS_BUILD_ID:-latest}
+DOCKER_TAG="latest"
 DOCKER_IMAGE_LATEST=$ORG/hsl-map-server:latest
 DOCKER_IMAGE_PROD=$ORG/hsl-map-server:prod
 DOCKER_IMAGE_DEV=$ORG/hsl-map-server:dev
+
+if [ "$TRAVIS_BRANCH" != "master" ]; then
+  DOCKER_TAG=$TRAVIS_BRANCH
+fi
 
 DOCKER_TAG_LONG=$DOCKER_TAG-$(date +"%Y-%m-%dT%H.%M.%S")-${TRAVIS_COMMIT:0:7}
 DOCKER_IMAGE_TAG_LONG=$ORG/hsl-map-server:$DOCKER_TAG_LONG
@@ -43,6 +47,8 @@ function test {
 
   echo $URL - OK
 }
+
+docker login -u $DOCKER_USER -p $DOCKER_AUTH
 
 echo Building $DOCKER_IMAGE_TAG_LONG
 docker build --tag=$DOCKER_IMAGE_TAG_LONG -f Dockerfile .
