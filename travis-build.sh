@@ -76,6 +76,8 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
 
   if [ "${TRAVIS_BRANCH}" == "develop" ]; then
     docker tag $DOCKER_IMAGE_TAG_LONG $DOCKER_IMAGE_DEV
+    docker push $DOCKER_IMAGE_TAG_LONG
+    echo Pushed $DOCKER_IMAGE_TAG_LONG
     docker push $DOCKER_IMAGE_DEV
     echo Pushed $DOCKER_IMAGE_DEV
   else
