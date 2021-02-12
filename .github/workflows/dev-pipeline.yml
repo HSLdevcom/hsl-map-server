@@ -1,8 +1,11 @@
 name: Process dev push or pr
 on:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron:  '0 2 * * *'
   push:
+    branches:
+      - develop
+  pull_request:
     branches:
       - develop
 jobs:
@@ -19,4 +22,4 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
           FONTSTACK_PASSWORD: ${{ secrets.FONTSTACK_PASSWORD }}
-          DOCKER_BASE_TAG: latest
+          DOCKER_TAG: dev

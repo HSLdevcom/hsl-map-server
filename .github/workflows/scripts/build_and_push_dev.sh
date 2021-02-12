@@ -6,8 +6,8 @@ set -e
 #DOCKER_AUTH
 #FONTSTACK_PASSWORD
 
-DOCKER_IMAGE=hsl-map-server:develop
-DOCKER_IMAGE_DEV=hsldevcom/hsl-map-server:develop
+DOCKER_IMAGE=hsl-map-server:$DOCKER_TAG
+DOCKER_IMAGE_TAG=hsldevcom/hsl-map-server:$DOCKER_TAG
 
 function test {
   URL=$1
@@ -59,8 +59,8 @@ echo Stopping $DOCKER_IMAGE
 docker stop hsl-map-server
 
 docker login -u $DOCKER_USER -p $DOCKER_AUTH
-docker tag $DOCKER_IMAGE $DOCKER_IMAGE_DEV
-docker push $DOCKER_IMAGE_DEV
-echo Pushed $DOCKER_IMAGE_DEV
+docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TAG
+docker push $DOCKER_IMAGE_TAG
+echo Pushed $DOCKER_IMAGE_TAG
 
 echo Build completed
