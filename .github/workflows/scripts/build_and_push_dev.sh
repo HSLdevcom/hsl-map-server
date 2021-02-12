@@ -6,8 +6,8 @@ set -e
 #DOCKER_AUTH
 #FONTSTACK_PASSWORD
 
-DOCKER_IMAGE=hsl-map-server:dev
-DOCKER_IMAGE_DEV=hsldevcom/hsl-map-server:dev
+DOCKER_IMAGE=hsl-map-server:develop
+DOCKER_IMAGE_DEV=hsldevcom/hsl-map-server:develop
 
 function test {
   URL=$1

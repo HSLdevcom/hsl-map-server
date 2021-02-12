@@ -1,5 +1,7 @@
 name: Process dev push or pr
 on:
+  schedule:
+    - cron:  '0 0 * * *'
   push:
     branches:
       - develop
