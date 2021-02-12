@@ -1,0 +1,36 @@
+name: Process dev push or pr
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: yarn
+      - name: Run tests
+        run: yarn test
+  docker-push:
+    if: github.ref == 'refs/heads/master'
+    needs:
+      - test
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build docker image from dev and push it
+        run: ./.github/workflows/scripts/build_and_push_dev.sh
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
+          DOCKER_BASE_TAG: latest
