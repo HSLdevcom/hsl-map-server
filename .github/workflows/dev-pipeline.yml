@@ -16,4 +16,5 @@ jobs:
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
+          FONTSTACK_PASSWORD: ${{ secrets.FONTSTACK_PASSWORD }}
           DOCKER_BASE_TAG: latest
