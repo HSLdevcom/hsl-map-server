@@ -6,12 +6,8 @@ set -e
 #DOCKER_AUTH
 #FONTSTACK_PASSWORD
 
-ORG=${ORG:-hsldevcom}
-DOCKER_TAG=${DOCKER_BASE_TAG:-latest}
-DOCKER_IMAGE=$ORG/hsl-map-server:${DOCKER_TAG}
-DOCKER_IMAGE_LATEST=$ORG/hsl-map-server:latest
-DOCKER_IMAGE_PROD=$ORG/hsl-map-server:prod
-DOCKER_IMAGE_DEV=$ORG/hsl-map-server:dev
+DOCKER_IMAGE=hsl-map-server:dev
+DOCKER_IMAGE_DEV=hsldevcom/hsl-map-server:dev
 
 function test {
   URL=$1
