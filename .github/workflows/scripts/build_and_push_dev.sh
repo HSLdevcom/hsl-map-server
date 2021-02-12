@@ -8,7 +8,6 @@ set -e
 
 DOCKER_IMAGE=hsl-map-server:develop
 DOCKER_IMAGE_DEV=hsldevcom/hsl-map-server:develop
-DOCKER_IMAGE_NEXT=hsldevcom/hsl-map-server:next
 
 function test {
   URL=$1
@@ -63,8 +62,5 @@ docker login -u $DOCKER_USER -p $DOCKER_AUTH
 docker tag $DOCKER_IMAGE $DOCKER_IMAGE_DEV
 docker push $DOCKER_IMAGE_DEV
 echo Pushed $DOCKER_IMAGE_DEV
-docker tag $DOCKER_IMAGE $DOCKER_IMAGE_NEXT
-docker push $DOCKER_IMAGE_NEXT
-echo Pushed $DOCKER_IMAGE_NEXT
 
 echo Build completed
