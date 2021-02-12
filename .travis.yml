@@ -3,6 +3,8 @@ branches:
   only:
     - master
     - develop
+    - next
+    - next-prod
 
 notifications:
   slack:

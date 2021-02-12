@@ -12,6 +12,8 @@ DOCKER_IMAGE=$ORG/hsl-map-server:${DOCKER_TAG}
 DOCKER_IMAGE_LATEST=$ORG/hsl-map-server:latest
 DOCKER_IMAGE_PROD=$ORG/hsl-map-server:prod
 DOCKER_IMAGE_DEV=$ORG/hsl-map-server:dev
+DOCKER_IMAGE_NEXT=$ORG/hsl-map-server:next
+DOCKER_IMAGE_NEXT_PROD=$ORG/hsl-map-server:next-prod
 
 function test {
   URL=$1
@@ -48,12 +50,11 @@ echo Running $DOCKER_IMAGE
 docker run --rm -p 8080:8080 -h hsl-map-server --name hsl-map-server -e FONTSTACK_PASSWORD=$FONTSTACK_PASSWORD $DOCKER_IMAGE &
 sleep 60
 
-test http://localhost:8080/map/v1/hsl-map/14/9326/4739.png 80000
-test http://localhost:8080/map/v1/hsl-map-sv/14/9326/4739.png 80000
-test http://localhost:8080/map/v1/hsl-map-fi-sv/14/9326/4739.png 80000
+test http://localhost:8080/map/v1/hsl-map/14/9326/4739.png 50000
+test http://localhost:8080/map/v1/hsl-map-sv/14/9326/4739.png 50000
+test http://localhost:8080/map/v1/hsl-map-fi-sv/14/9326/4739.png 50000
 
 test http://localhost:8080/map/v1/hsl-stop-map/14/9326/4739.pbf 2000
-# test http://localhost:8080/map/v1/waltti-stop-map/14/9363/4546.pbf 2000
 
 test http://localhost:8080/map/v1/hsl-citybike-map/14/9326/4739.pbf 40
 test http://localhost:8080/map/v1/hsl-parkandride-map/14/9326/4739.pbf 500
@@ -68,6 +69,14 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     docker tag $DOCKER_IMAGE $DOCKER_IMAGE_DEV
     docker push $DOCKER_IMAGE_DEV
     echo Pushed $DOCKER_IMAGE_DEV
+  elif [ "${TRAVIS_BRANCH}" == "next" ]; then
+    docker tag $DOCKER_IMAGE $DOCKER_IMAGE_NEXT
+    docker push $DOCKER_IMAGE_NEXT
+    echo Pushed $DOCKER_IMAGE_NEXT
+  elif [ "${TRAVIS_BRANCH}" == "next-prod" ]; then
+    docker tag $DOCKER_IMAGE $DOCKER_IMAGE_NEXT_PROD
+    docker push $DOCKER_IMAGE_NEXT_PROD
+    echo Pushed $DOCKER_IMAGE_NEXT_PROD
   else
     docker push $DOCKER_IMAGE
     docker tag $DOCKER_IMAGE $DOCKER_IMAGE_LATEST
