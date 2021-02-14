@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@mapbox/abaculus@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@mapbox/abaculus/-/abaculus-2.1.0.tgz#eace945cdb0e47229d1a4c7bfda6ca799abc56b4"
+  dependencies:
+    "@mapbox/sphericalmercator" "1.0.x"
+    d3-queue "^2.0.2"
+    mapnik "~3.6.0"
+
 "@mapbox/mapbox-gl-native@^3.5.3":
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/@mapbox/mapbox-gl-native/-/mapbox-gl-native-3.5.4.tgz#46f69166bf5dbca9fae436f19ecc375cbbce77ff"
@@ -13,19 +21,32 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
 
+"@mapbox/sphericalmercator@1.0.x", "@mapbox/sphericalmercator@~1.0.1":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@mapbox/sphericalmercator/-/sphericalmercator-1.0.5.tgz#70237b9774095ed1cfdbcea7a8fd1fc82b2691f2"
+
+"@mapbox/sphericalmercator@^1.0.2", "@mapbox/sphericalmercator@^1.0.5":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@mapbox/sphericalmercator/-/sphericalmercator-1.1.0.tgz#f3b1af042620716a1289fc41e1e97f610823aefe"
+
+"@mapbox/tilelive@^5.3.3":
+  version "5.12.6"
+  resolved "https://registry.yarnpkg.com/@mapbox/tilelive/-/tilelive-5.12.6.tgz#00b3efe0b999e8307bc1cc099cb770da7676690b"
+  dependencies:
+    "@mapbox/sphericalmercator" "~1.0.1"
+    minimist "~0.2.0"
+    progress-stream "~0.5.x"
+    queue-async "~1.0.7"
+
+"@mapbox/tiletype@^0.3.0":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@mapbox/tiletype/-/tiletype-0.3.1.tgz#1a1498f6a1b777630e0b4d3a2fed9d94959560cc"
+
 "@mapbox/vector-tile@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@mapbox/vector-tile/-/vector-tile-1.3.0.tgz#c495f972525befccefcd838f45ffa37ef3b70fe8"
   dependencies:
     "@mapbox/point-geometry" "~0.1.0"
-
-abaculus@^1.2.1:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/abaculus/-/abaculus-1.3.0.tgz#eb4b5f03a1aba29b508c3055379188948b3dea39"
-  dependencies:
-    mapnik "~3.5.0"
-    queue-async "1.0.7"
-    sphericalmercator "1.0.x"
 
 abbrev@1:
   version "1.1.0"
@@ -132,8 +153,10 @@ asn1@0.1.11:
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.1.11.tgz#559be18376d08a4ec4dbe80877d27818639b2df7"
 
 asn1@~0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.4.tgz#8d2475dfab553bb33e77b54e59e880bb8ce23136"
+  dependencies:
+    safer-buffer "~2.1.0"
 
 assert-plus@1.0.0, assert-plus@^1.0.0:
   version "1.0.0"
@@ -159,11 +182,7 @@ async@0.2.9, async@0.2.x, async@~0.2.9:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/async/-/async-0.2.9.tgz#df63060fbf3d33286a76aaf6d55a2986d9ff8619"
 
-async@^0.9.0:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/async/-/async-0.9.2.tgz#aea74d5e61c1f899613bf64bda66d4c78f2fd17d"
-
-async@^1.4.0:
+async@^1.4.0, async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
@@ -217,8 +236,8 @@ basic-auth@~1.1.0:
   resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-1.1.0.tgz#45221ee429f7ee1e5035be3f51533f1cdfd29884"
 
 bcrypt-pbkdf@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz#63bc5dcb61331b92bc05fd528953c33462a06f8d"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.2.tgz#a4301d389b6a43f9b67ff3ca11a3f6637e360e9e"
   dependencies:
     tweetnacl "^0.14.3"
 
@@ -301,6 +320,10 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+bower@^1.7.10:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/bower/-/bower-1.8.8.tgz#82544be34a33aeae7efb8bdf9905247b2cffa985"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -602,7 +625,7 @@ cycle@1.0.x:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/cycle/-/cycle-1.0.3.tgz#21e80b2be8580f98b468f379430662b046c34ad2"
 
-d3-queue@~2.0.3:
+d3-queue@^2.0.2, d3-queue@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/d3-queue/-/d3-queue-2.0.3.tgz#07fbda3acae5358a9c5299aaf880adf0953ed2c2"
 
@@ -781,10 +804,11 @@ each-async@^1.0.0, each-async@^1.1.1:
     set-immediate-shim "^1.0.0"
 
 ecc-jsbn@~0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.2.tgz#3a83a904e54353287874c564b7549386849a98c9"
   dependencies:
     jsbn "~0.1.0"
+    safer-buffer "^2.1.0"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -1400,9 +1424,9 @@ hosted-git-info@^2.1.4:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
 
-hsl-map-style@hsldevcom/hsl-map-style#e872d922403fa6f597278cbb7ec15a2e085f37ec:
+hsl-map-style@hsldevcom/hsl-map-style#cdc3685a8a4e845c81f19289d1823773b5130ade:
   version "1.0.0"
-  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/e872d922403fa6f597278cbb7ec15a2e085f37ec"
+  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/cdc3685a8a4e845c81f19289d1823773b5130ade"
   dependencies:
     lodash "^4.17.4"
 
@@ -1730,11 +1754,11 @@ load-json-file@^1.0.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
-locking-cache@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/locking-cache/-/locking-cache-0.2.1.tgz#c13cd666313d926a505e6dc5fa06acd174918f12"
+locking-cache@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/locking-cache/-/locking-cache-0.3.0.tgz#6483e99b218fd9a144d8e2b1b5cfc115043fe57d"
   dependencies:
-    lru-cache "^2.5.0"
+    lru-cache "^4.0.1"
 
 lodash._basecopy@^3.0.0:
   version "3.0.1"
@@ -1777,10 +1801,6 @@ lodash.escape@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash.escape/-/lodash.escape-3.2.0.tgz#995ee0dc18c1b48cc92effae71a10aab5b487698"
   dependencies:
     lodash._root "^3.0.0"
-
-lodash.groupby@^4.2.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
 
 lodash.isarguments@^3.0.0:
   version "3.1.0"
@@ -1826,10 +1846,6 @@ lodash.templatesettings@^3.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
-
-lodash.zip@^4.0.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lodash.zip/-/lodash.zip-4.2.0.tgz#ec6662e4896408ed4ab6c542a3990b72cc080020"
 
 lodash@^2.4.1:
   version "2.4.2"
@@ -1878,15 +1894,26 @@ lru-cache@^2.5.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
 
+lru-cache@^4.0.1:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
+  dependencies:
+    pseudomap "^1.0.2"
+    yallist "^2.1.2"
+
 map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
+
+mapnik-vector-tile@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/mapnik-vector-tile/-/mapnik-vector-tile-1.4.0.tgz#f46742514cd3ad3554c5d640614804fe9beb49e5"
 
 mapnik-vector-tile@~1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/mapnik-vector-tile/-/mapnik-vector-tile-1.2.2.tgz#42795ca211dd274a9a4af5bf6cfe3b0bfe0ba243"
 
-mapnik@~3.5.0, mapnik@~3.5.13:
+mapnik@~3.5.13:
   version "3.5.14"
   resolved "https://registry.yarnpkg.com/mapnik/-/mapnik-3.5.14.tgz#632bd6635c72c0214a707549309ba416594afff7"
   dependencies:
@@ -1894,6 +1921,15 @@ mapnik@~3.5.0, mapnik@~3.5.13:
     nan "~2.4.0"
     node-pre-gyp "~0.6.30"
     protozero "~1.4.2"
+
+mapnik@~3.6.0:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/mapnik/-/mapnik-3.6.2.tgz#49caaab7d97c04d4399b32e6a98ec2b1659f218c"
+  dependencies:
+    mapnik-vector-tile "1.4.0"
+    nan "~2.5.0"
+    node-pre-gyp "~0.6.30"
+    protozero "1.5.1"
 
 mbtiles@hannesj/node-mbtiles#patch-1:
   version "0.9.0"
@@ -2041,6 +2077,10 @@ mute-stream@~0.0.4:
 nan@^2.3.0, nan@^2.4.0, nan@~2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.4.0.tgz#fb3c59d45fe4effe215f0b890f8adf6eb32d2232"
+
+nan@~2.5.0:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.5.1.tgz#d5b01691253326a97a2bbee9e61c55d8d60351e2"
 
 nconf@0.6.9, nconf@~0.6.9:
   version "0.6.9"
@@ -2376,6 +2416,10 @@ protocol-buffers-schema@^2.0.2:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/protocol-buffers-schema/-/protocol-buffers-schema-2.2.0.tgz#d29c6cd73fb655978fb6989691180db844119f61"
 
+protozero@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/protozero/-/protozero-1.5.1.tgz#5a27df6fb6e1ed743f510812ae76c082f5b16638"
+
 protozero@~1.4.2:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/protozero/-/protozero-1.4.5.tgz#80eaa80a4f9c751465c4cb2620d8233b50ec1aff"
@@ -2392,6 +2436,10 @@ ps-tree@0.0.x:
   resolved "https://registry.yarnpkg.com/ps-tree/-/ps-tree-0.0.3.tgz#dbf8d752a7fe22fa7d58635689499610e9276ddc"
   dependencies:
     event-stream "~0.5"
+
+pseudomap@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
 punycode@1.3.2:
   version "1.3.2"
@@ -2417,7 +2465,7 @@ querystring@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
-queue-async@1.0.7, queue-async@~1.0.7:
+queue-async@~1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/queue-async/-/queue-async-1.0.7.tgz#22ae0a1dac4a92f5bcd4634f993c682a2a810945"
 
@@ -2665,9 +2713,9 @@ resumer@~0.0.0:
   dependencies:
     through "~2.3.4"
 
-retry@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/retry/-/retry-0.6.1.tgz#fdc90eed943fde11b893554b8cc63d0e899ba918"
+retry@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/retry/-/retry-0.10.1.tgz#e76388d217992c252750241d3d3956fed98d8ff4"
 
 revalidator@0.1.x:
   version "0.1.8"
@@ -2702,6 +2750,10 @@ safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
+safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
+
 sax@1.2.1, sax@>=0.6.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.1.tgz#7b8e656190b228e81a66aea748480d828cd2d37a"
@@ -2726,9 +2778,13 @@ semver-truncate@^1.0.0:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
 
-semver@^4.0.3, semver@^4.3.6:
+semver@^4.0.3:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
+
+semver@^5.2.0:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
 
 send@0.15.3:
   version "0.15.3"
@@ -2828,7 +2884,7 @@ spherical@~0.1.0:
   dependencies:
     wgs84 "0.0.0"
 
-sphericalmercator@1.0.x, sphericalmercator@^1.0.2, sphericalmercator@^1.0.5, sphericalmercator@~1.0.1, sphericalmercator@~1.0.5:
+sphericalmercator@^1.0.5, sphericalmercator@~1.0.1, sphericalmercator@~1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/sphericalmercator/-/sphericalmercator-1.0.5.tgz#ddc5a049e360e000d0fad9fc22c4071882584980"
 
@@ -2848,17 +2904,17 @@ squeak@^1.0.0:
     lpad-align "^1.0.1"
 
 sshpk@^1.7.0:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.13.1.tgz#512df6da6287144316dc4c18fe1cf1d940739be3"
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.16.1.tgz#fb661c0bef29b39db40769ee39fa70093d6f6877"
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"
-    dashdash "^1.12.0"
-    getpass "^0.1.1"
-  optionalDependencies:
     bcrypt-pbkdf "^1.0.0"
+    dashdash "^1.12.0"
     ecc-jsbn "~0.1.1"
+    getpass "^0.1.1"
     jsbn "~0.1.0"
+    safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
 stack-trace@0.0.x:
@@ -3018,11 +3074,14 @@ tempfile@^1.0.0:
     os-tmpdir "^1.0.0"
     uuid "^2.0.1"
 
-tessera@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/tessera/-/tessera-0.10.1.tgz#5d0f1d84ebd610afe2b25f66a1e03944cb147583"
+tessera@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/tessera/-/tessera-0.12.0.tgz#db066d984255bdbd5763dafbcdb8d34b0666c47f"
   dependencies:
-    abaculus "^1.2.1"
+    "@mapbox/abaculus" "^2.1.0"
+    "@mapbox/sphericalmercator" "^1.0.2"
+    "@mapbox/tilelive" "^5.3.3"
+    bower "^1.7.10"
     cachecache "^1.0.1"
     clone "^1.0.2"
     cors "^2.5.2"
@@ -3032,10 +3091,8 @@ tessera@^0.10.1:
     morgan "^1.5.0"
     nomnom "^1.8.1"
     response-time "^2.2.0"
-    sphericalmercator "^1.0.2"
-    tilelive "^5.3.3"
-    tilelive-cache "^0.6.1"
-    tilelive-modules "^0.2.0"
+    tilelive-cache "^0.7.1"
+    tilelive-modules "^0.3.4"
 
 through2-filter@^2.0.0:
   version "2.0.0"
@@ -3077,13 +3134,13 @@ tilejson@^1.0.1:
     requestretry "1.4.0"
     tiletype "0.1.x"
 
-tilelive-cache@^0.6.1:
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/tilelive-cache/-/tilelive-cache-0.6.5.tgz#0a2cdeab42fc133acaa537ad34f0f04d0335a949"
+tilelive-cache@^0.7.1:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/tilelive-cache/-/tilelive-cache-0.7.2.tgz#9df0693493621f55ed26b0c666ac3c8dc5e844e5"
   dependencies:
     clone "^1.0.2"
-    locking-cache "^0.2.0"
-    tilelive-streaming "^0.6.3"
+    locking-cache "^0.3.0"
+    tilelive-streaming "^0.7.4"
 
 tilelive-gl@hsldevcom/tilelive-gl#2f61ec0da7e5b13ca547fa5350905f3c2a688813:
   version "0.0.3"
@@ -3107,42 +3164,33 @@ tilelive-hsl-parkandride@HSLdevcom/tilelive-hsl-parkandride:
     requestretry "^1.6.0"
     vt-pbf "^2.0.2"
 
-tilelive-hsl-ticket-sales@HSLdevcom/tilelive-hsl-ticket-sales#482273fff26f83afc422898dad353f75f753c7ee:
+tilelive-hsl-ticket-sales@HSLdevcom/tilelive-hsl-ticket-sales#9d304b6c29c9e393df46d01b3a238d48aaa08b69:
   version "0.0.1"
-  resolved "https://codeload.github.com/HSLdevcom/tilelive-hsl-ticket-sales/tar.gz/482273fff26f83afc422898dad353f75f753c7ee"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-hsl-ticket-sales/tar.gz/9d304b6c29c9e393df46d01b3a238d48aaa08b69"
   dependencies:
     geojson-vt "^2.1.8"
     requestretry "^1.6.0"
     vt-pbf "^2.0.2"
 
-tilelive-http@^0.10.0:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/tilelive-http/-/tilelive-http-0.10.1.tgz#69c2340a1e87efa65389b1c9e1c4352473439603"
+tilelive-http@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/tilelive-http/-/tilelive-http-0.14.0.tgz#c0f56a7d022262b1b185796af9d5134e7420a433"
   dependencies:
+    "@mapbox/sphericalmercator" "^1.0.5"
     debug "^2.2.0"
     request "^2.34.0"
-    retry "^0.6.1"
-    semver "^4.3.6"
+    retry "^0.10.1"
+    semver "^5.2.0"
 
-tilelive-modules@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/tilelive-modules/-/tilelive-modules-0.2.1.tgz#b5cc159c6e7b4ba7059a839e213c9584dacc3f5f"
+tilelive-modules@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/tilelive-modules/-/tilelive-modules-0.3.4.tgz#b8fbde952240393bf3f2f86a2724dfcc8a9110d9"
 
 tilelive-otp-citybikes@HSLdevcom/tilelive-otp-citybikes#493589481e96e32928a3f64eb6701ec1650334ff:
   version "0.0.3"
   resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-citybikes/tar.gz/493589481e96e32928a3f64eb6701ec1650334ff"
   dependencies:
     geojson-vt "^2.1.8"
-    requestretry "^1.6.0"
-    vt-pbf "^2.0.2"
-
-tilelive-otp-routes@HSLdevcom/tilelive-otp-routes:
-  version "0.1.2"
-  resolved "https://codeload.github.com/HSLdevcom/tilelive-otp-routes/tar.gz/42aa91c2705279d4576aaa88a82104c4229a5d0e"
-  dependencies:
-    geojson-vt "^2.1.8"
-    lodash.groupby "^4.2.0"
-    lodash.zip "^4.0.0"
     requestretry "^1.6.0"
     vt-pbf "^2.0.2"
 
@@ -3155,15 +3203,15 @@ tilelive-otp-stops@HSLdevcom/tilelive-otp-stops#cee37855b27a862f2f9eb59e0e938d74
     requestretry "^1.6.0"
     vt-pbf "^2.1.1"
 
-tilelive-streaming@^0.6.3:
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/tilelive-streaming/-/tilelive-streaming-0.6.4.tgz#9a3f6aea6fc8b69cdccf12de6aa506312d8e2d74"
+tilelive-streaming@^0.7.4:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/tilelive-streaming/-/tilelive-streaming-0.7.7.tgz#4e1f75628c596c669fcc52a977ae482c17ef9951"
   dependencies:
-    async "^0.9.0"
+    "@mapbox/sphericalmercator" "^1.0.2"
+    "@mapbox/tiletype" "^0.3.0"
+    async "^1.5.2"
     debug "^2.2.0"
     highland "^2.0.0"
-    sphericalmercator "^1.0.2"
-    tiletype "~0.1.0"
 
 tilelive-vector@^3.9.3:
   version "3.9.4"
@@ -3181,13 +3229,13 @@ tilelive-vector@^3.9.3:
     tiletype "0.3.x"
     underscore "~1.8.0"
 
-tilelive-xray@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/tilelive-xray/-/tilelive-xray-0.2.0.tgz#71666ea3041f53ba21027c479df41113c812db7c"
+tilelive-xray@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/tilelive-xray/-/tilelive-xray-0.4.0.tgz#0bb0e2eaa4e2cfe1a2a0630b28c27c0e595c59ab"
   dependencies:
     clone "^0.2.0"
 
-tilelive@^5.3.3, tilelive@~5.12.0:
+tilelive@~5.12.0:
   version "5.12.3"
   resolved "https://registry.yarnpkg.com/tilelive/-/tilelive-5.12.3.tgz#9c8c770e1194aa8d353d9a1d03147404307cdebd"
   dependencies:
@@ -3196,7 +3244,7 @@ tilelive@^5.3.3, tilelive@~5.12.0:
     queue-async "~1.0.7"
     sphericalmercator "~1.0.1"
 
-tiletype@0.1.x, tiletype@~0.1.0:
+tiletype@0.1.x:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/tiletype/-/tiletype-0.1.0.tgz#0b9ca654f8c0a7ccccd920edf594d3ee9489c297"
 
@@ -3542,6 +3590,10 @@ xtend@~2.1.1:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-2.1.2.tgz#6efecc2a4dad8e6962c4901b337ce7ba87b5d28b"
   dependencies:
     object-keys "~0.4.0"
+
+yallist@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
 
 yargs@~3.10.0:
   version "3.10.0"
