@@ -22,4 +22,4 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
           FONTSTACK_PASSWORD: ${{ secrets.FONTSTACK_PASSWORD }}
-          DOCKER_TAG: latest
+          DOCKER_TAG: prod
