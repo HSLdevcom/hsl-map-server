@@ -91,6 +91,34 @@ module.exports = {
       "Cache-Control": "public,max-age=604800"
     }
   },
+  "/map/v1/hsl-map-no-text": {
+    "source": {
+      "protocol": "gl:",
+      "query": {},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { text: { enabled: false } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v1/hsl-map-no-text-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": {layerTileSize: 256},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { text: { enabled: false } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
   "/map/v1/hsl-citybike-map": {
     "source": `otpcitybikes://${process.env.HSL_OTP_URL}`,
     "headers": {
