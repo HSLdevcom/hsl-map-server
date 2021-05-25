@@ -1,0 +1,25 @@
+name: Process dev push or pr
+on:
+  schedule:
+    - cron:  '0 2 * * *'
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+jobs:
+  docker-push:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Change permissions
+        run: chmod +x ./.github/workflows/scripts/build_and_push_dev.sh
+      - name: Build docker image from dev and push it
+        run: ./.github/workflows/scripts/build_and_push_dev.sh
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
+          FONTSTACK_PASSWORD: ${{ secrets.FONTSTACK_PASSWORD }}
+          DOCKER_TAG: dev

@@ -1,0 +1,25 @@
+name: Process next push or pr
+on:
+  schedule:
+    - cron:  '0 3 * * *'
+  push:
+    branches:
+      - next
+  pull_request:
+    branches:
+      - next
+jobs:
+  docker-push:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Change permissions
+        run: chmod +x ./.github/workflows/scripts/build_and_push_next.sh
+      - name: Build docker image from next and push it
+        run: ./.github/workflows/scripts/build_and_push_next.sh
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
+          FONTSTACK_PASSWORD: ${{ secrets.FONTSTACK_PASSWORD }}
+          DOCKER_TAG: next
