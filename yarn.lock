@@ -1424,9 +1424,9 @@ hosted-git-info@^2.1.4:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
 
-hsl-map-style@hsldevcom/hsl-map-style#6485d6f5928e3b9499bf16c643a87ddc17d9e9b9:
+hsl-map-style@hsldevcom/hsl-map-style#hsl-map-server:
   version "1.0.0"
-  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/6485d6f5928e3b9499bf16c643a87ddc17d9e9b9"
+  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/ac587857442fb2ea05c7099613e2640f67aa0b15"
   dependencies:
     lodash "^4.17.4"
 
@@ -3164,9 +3164,9 @@ tilelive-hsl-parkandride@HSLdevcom/tilelive-hsl-parkandride:
     requestretry "^1.6.0"
     vt-pbf "^2.0.2"
 
-tilelive-hsl-ticket-sales@HSLdevcom/tilelive-hsl-ticket-sales#49173fb580615b4dc597cbd9e03368f16f8502aa:
+tilelive-hsl-ticket-sales@HSLdevcom/tilelive-hsl-ticket-sales#482273fff26f83afc422898dad353f75f753c7ee:
   version "0.0.1"
-  resolved "https://codeload.github.com/HSLdevcom/tilelive-hsl-ticket-sales/tar.gz/49173fb580615b4dc597cbd9e03368f16f8502aa"
+  resolved "https://codeload.github.com/HSLdevcom/tilelive-hsl-ticket-sales/tar.gz/482273fff26f83afc422898dad353f75f753c7ee"
   dependencies:
     geojson-vt "^2.1.8"
     requestretry "^1.6.0"

@@ -91,6 +91,90 @@ module.exports = {
       "Cache-Control": "public,max-age=604800"
     }
   },
+  "/map/v1/hsl-map-no-text": {
+    "source": {
+      "protocol": "gl:",
+      "query": {},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { text: { enabled: false } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v1/hsl-map-no-text-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": {layerTileSize: 256},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { text: { enabled: false } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v1/hsl-map-greyscale": {
+    "source": {
+      "protocol": "gl:",
+      "query": {},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { greyscale: { enabled: true } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v1/hsl-map-greyscale-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": {layerTileSize: 256},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { greyscale: { enabled: true } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v1/hsl-map-greyscale-no-text": {
+    "source": {
+      "protocol": "gl:",
+      "query": {},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { greyscale_no_text: { enabled: true } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v1/hsl-map-greyscale-256-no-text": {
+    "source": {
+      "protocol": "gl:",
+      "query": {layerTileSize: 256},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { greyscale_no_text: { enabled: true } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
   "/map/v1/hsl-citybike-map": {
     "source": `otpcitybikes://${process.env.HSL_OTP_URL}`,
     "headers": {

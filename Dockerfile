@@ -21,6 +21,7 @@ RUN yarn install
 COPY . ${WORK}
 
 RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland.mbtiles
+
 EXPOSE 8080
 
 RUN chmod -R 777 ${WORK}
