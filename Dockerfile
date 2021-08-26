@@ -9,14 +9,15 @@ ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
 RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa libstdc++6
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa libstdc++6 --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /src/*.deb
 
 RUN mkdir -p ${WORK}
 WORKDIR ${WORK}
 
-COPY yarn.lock ${WORK}
-COPY package.json ${WORK}
-RUN yarn install
+COPY yarn.lock package.json ${WORK}/
+RUN yarn install && yarn cache clean
 
 COPY . ${WORK}
 
@@ -24,10 +25,9 @@ RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbti
 
 EXPOSE 8080
 
-RUN chmod -R 777 ${WORK}
+# RUN chmod -R 777 ${WORK} # This should be avoided, because it duplicates the size of the docker image
 
 RUN mkdir /.forever && chmod -R 777 /.forever
-#USER 9999
 
 ADD run.sh /usr/local/bin/
 
