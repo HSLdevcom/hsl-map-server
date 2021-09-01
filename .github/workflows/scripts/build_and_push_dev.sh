@@ -6,8 +6,12 @@ set -e
 #DOCKER_AUTH
 #FONTSTACK_PASSWORD
 
+COMMIT_HASH=$(git rev-parse --short "$GITHUB_SHA")
+DOCKER_TAG_LONG=$DOCKER_TAG-$(date +"%Y-%m-%dT%H.%M.%S")-$COMMIT_HASH
+
 DOCKER_IMAGE=hsl-map-server:$DOCKER_TAG
 DOCKER_IMAGE_TAG=hsldevcom/hsl-map-server:$DOCKER_TAG
+DOCKER_IMAGE_TAG_LONG=hsldevcom/hsl-map-server:$DOCKER_TAG_LONG
 
 function test {
   URL=$1
@@ -59,6 +63,8 @@ echo Stopping $DOCKER_IMAGE
 docker stop hsl-map-server
 
 docker login -u $DOCKER_USER -p $DOCKER_AUTH
+docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TAG_LONG
+docker push $DOCKER_IMAGE_TAG_LONG
 docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TAG
 docker push $DOCKER_IMAGE_TAG
 echo Pushed $DOCKER_IMAGE_TAG
