@@ -23,7 +23,7 @@
     "tessera": "^0.12.0",
     "tilelive-gl": "hsldevcom/tilelive-gl#2f61ec0da7e5b13ca547fa5350905f3c2a688813",
     "tilelive-hsl-parkandride": "HSLdevcom/tilelive-hsl-parkandride",
-    "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales#482273fff26f83afc422898dad353f75f753c7ee",
+    "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales",
     "tilelive-otp-citybikes": "HSLdevcom/tilelive-otp-citybikes#493589481e96e32928a3f64eb6701ec1650334ff",
     "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops#cee37855b27a862f2f9eb59e0e938d747466ffd2"
   }
