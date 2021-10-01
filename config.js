@@ -211,12 +211,12 @@ module.exports = {
       "Cache-Control": "public,max-age=43200"
     }
   },
-  "/map/v1/hsl-parkandride-map": {
-    "source": "hslparkandride://",
-    "headers": {
-      "Cache-Control": "public,max-age=172800"
-    }
-  },
+  // "/map/v1/hsl-parkandride-map": {
+  //   "source": "hslparkandride://",
+  //   "headers": {
+  //     "Cache-Control": "public,max-age=172800"
+  //   }
+  // },
   "/map/v1/hsl-ticket-sales-map": {
     "source": "hslticketsales://",
     "headers": {
