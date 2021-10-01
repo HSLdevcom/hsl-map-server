@@ -1,7 +1,7 @@
 name: Process next-prod push or pr
 on:
-  schedule:
-    - cron:  '0 4 * * *'
+  # schedule:
+  #   - cron:  '0 4 * * *'
   push:
     branches:
       - next-prod
