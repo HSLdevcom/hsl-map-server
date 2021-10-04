@@ -13,7 +13,7 @@ unzip -P ${FONTSTACK_PASSWORD} fontstack.zip && \
 cd ${WORK} && \
 Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
 sleep 15 && \
-DISPLAY=":10" node_modules/.bin/forever start -c "node ${NODE_OPTS}" \
+DISPLAY=":10" node_modules/.bin/forever start --spinSleepTime 60000 --minUptime 30000 -c "node ${NODE_OPTS}" \
 node_modules/tessera/bin/tessera.js --port 8080 --config config.js --multiprocess \
 -r ${WORK}/node_modules/tilelive-otp-citybikes/ \
 -r ${WORK}/node_modules/tilelive-otp-stops/ \
