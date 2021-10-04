@@ -8,7 +8,7 @@ ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
 RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y curl unzip pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa --no-install-recommends \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y curl ca-certificates unzip pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p ${WORK}
