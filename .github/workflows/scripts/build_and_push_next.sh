@@ -56,7 +56,7 @@ test http://localhost:8080/map/v1/hsl-stop-map/14/9326/4739.pbf 2000
 # test http://localhost:8080/map/v1/waltti-stop-map/14/9363/4546.pbf 2000
 
 test http://localhost:8080/map/v1/hsl-citybike-map/14/9326/4739.pbf 40
-# test http://localhost:8080/map/v1/hsl-parkandride-map/14/9326/4739.pbf 500
+test http://localhost:8080/map/v1/hsl-parkandride-map/14/9326/4739.pbf 500
 test http://localhost:8080/map/v1/hsl-ticket-sales-map/14/9326/4739.pbf 500
 
 echo Stopping $DOCKER_IMAGE
