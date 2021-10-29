@@ -1,6 +1,5 @@
-FROM node:10-stretch-slim
+FROM node:10-buster-slim
 
-ENV FONTSTACK_PASSWORD ""
 ENV HSL_OTP_URL api.digitransit.fi/routing/v1/routers/hsl/index/graphql
 ENV FINLAND_OTP_URL api.digitransit.fi/routing/v1/routers/finland/index/graphql
 ENV WALTTI_OTP_URL api.digitransit.fi/routing/v1/routers/waltti/index/graphql
@@ -8,7 +7,7 @@ ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
 RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y curl ca-certificates unzip pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa --no-install-recommends \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y curl ca-certificates pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p ${WORK}

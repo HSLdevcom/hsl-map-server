@@ -2019,9 +2019,9 @@ hosted-git-info@^2.1.4:
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
   integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
-hsl-map-style@hsldevcom/hsl-map-style#hsl-map-server:
+hsl-map-style@hsldevcom/hsl-map-style#hsl-routemap-server-openmaptiles:
   version "1.0.0"
-  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/dd879765697103d1eafdf99f76421ee403845422"
+  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/638c03db8a3d8b1cda47168e6f0a8f72507a7090"
   dependencies:
     lodash "^4.17.4"
 

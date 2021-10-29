@@ -14,7 +14,10 @@ module.exports = {
       "query": {},
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
-        glyphsUrl
+        glyphsUrl,
+        components: {
+          simplified: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -24,11 +27,13 @@ module.exports = {
   "/map/v1/hsl-map-256": {
     "source": {
       "protocol": "gl:",
-      "query": {layerTileSize: 256},
+      "query": { layerTileSize: 256 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { icons: { enabled: true } }
+        components: {
+          simplified: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -42,7 +47,10 @@ module.exports = {
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { text_sv: { enabled: true } }
+        components: {
+          text_sv: { enabled: true },
+          simplified: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -52,11 +60,14 @@ module.exports = {
   "/map/v1/hsl-map-sv-256": {
     "source": {
       "protocol": "gl:",
-      "query": {layerTileSize: 256},
+      "query": { layerTileSize: 256 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { icons: { enabled: true }, text_sv: { enabled: true } }
+        components: {
+          text_sv: { enabled: true },
+          simplified: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -70,7 +81,10 @@ module.exports = {
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { text_fisv: { enabled: true } }
+        components: {
+          text_fisv: { enabled: true },
+          simplified: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -80,11 +94,14 @@ module.exports = {
   "/map/v1/hsl-map-fi-sv-256": {
     "source": {
       "protocol": "gl:",
-      "query": {layerTileSize: 256},
+      "query": { layerTileSize: 256 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { icons: { enabled: true }, text_fisv: { enabled: true } }
+        components: {
+          text_fisv: { enabled: true },
+          simplified: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -98,7 +115,10 @@ module.exports = {
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { text: { enabled: false } }
+        components: {
+          text: { enabled: false },
+          simplified: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -108,11 +128,14 @@ module.exports = {
   "/map/v1/hsl-map-no-text-256": {
     "source": {
       "protocol": "gl:",
-      "query": {layerTileSize: 256},
+      "query": { layerTileSize: 256 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { text: { enabled: false } }
+        components: {
+          text: { enabled: false },
+          simplified: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -126,7 +149,9 @@ module.exports = {
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { greyscale: { enabled: true } }
+        components: {
+          greyscale: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -136,11 +161,13 @@ module.exports = {
   "/map/v1/hsl-map-greyscale-256": {
     "source": {
       "protocol": "gl:",
-      "query": {layerTileSize: 256},
+      "query": { layerTileSize: 256 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { greyscale: { enabled: true } }
+        components: {
+          greyscale: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -154,7 +181,10 @@ module.exports = {
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { greyscale_no_text: { enabled: true } }
+        components: {
+          text: { enabled: false },
+          greyscale: { enabled: true }
+        }
       })
     },
     "headers": {
@@ -164,11 +194,14 @@ module.exports = {
   "/map/v1/hsl-map-greyscale-256-no-text": {
     "source": {
       "protocol": "gl:",
-      "query": {layerTileSize: 256},
+      "query": { layerTileSize: 256 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: { greyscale_no_text: { enabled: true } }
+        components: {
+          text: { enabled: false },
+          greyscale: { enabled: true }
+        }
       })
     },
     "headers": {
