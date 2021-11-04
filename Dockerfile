@@ -18,7 +18,11 @@ RUN yarn install && yarn cache clean
 
 COPY . ${WORK}
 
+# New OpenMapTiles schema
 RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles > finland.mbtiles
+
+# Deprecated schema. Should be removed at some point, but important to include until all clients are using the new schema.
+RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland-old-schema.mbtiles
 
 EXPOSE 8080
 

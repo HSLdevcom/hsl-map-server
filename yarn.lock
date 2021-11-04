@@ -2021,7 +2021,7 @@ hosted-git-info@^2.1.4:
 
 hsl-map-style@hsldevcom/hsl-map-style#hsl-routemap-server-openmaptiles:
   version "1.0.0"
-  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/638c03db8a3d8b1cda47168e6f0a8f72507a7090"
+  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/a13985328540a3e5dedfec511cf4d8bc3fca952b"
   dependencies:
     lodash "^4.17.4"
 

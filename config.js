@@ -2,8 +2,15 @@ const sourcesUrl = "localhost:8080/map/v1/";
 const glyphsUrl = `file://${process.env.WORK}/node_modules/hsl-map-style/`;
 
 module.exports = {
-  "/map/v1/hsl-vector-map": {
+  "/map/v1/hsl-vector": {
     "source": "mbtiles://./finland.mbtiles",
+    "headers": {
+      "Cache-Control": "public,max-age=3600"
+    }
+  },
+  // Endpoint for the old deprecated schema. Remove after not needed any more.
+  "/map/v1/hsl-vector-map": {
+    "source": "mbtiles://./finland-old-schema.mbtiles",
     "headers": {
       "Cache-Control": "public,max-age=3600"
     }
