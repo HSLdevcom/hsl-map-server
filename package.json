@@ -20,6 +20,7 @@
     "@mapbox/mbtiles": "^0.12.1",
     "forever": "^4.0.1",
     "hsl-map-style": "hsldevcom/hsl-map-style#development",
+    "hsl-map-style-v1": "hsldevcom/hsl-map-style#style-update-legacy-v1",
     "tessera": "^0.14.2",
     "tilelive-gl": "hsldevcom/tilelive-gl#2f61ec0da7e5b13ca547fa5350905f3c2a688813",
     "tilelive-hsl-parkandride": "HSLdevcom/tilelive-hsl-parkandride",
