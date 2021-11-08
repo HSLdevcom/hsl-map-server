@@ -19,7 +19,10 @@ RUN yarn install && yarn cache clean
 
 COPY . ${WORK}
 
-RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland.mbtiles
+# Old schema
+RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland-old.mbtiles
+# New schema
+RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles > finland.mbtiles
 
 EXPOSE 8080
 
