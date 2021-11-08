@@ -1,8 +1,8 @@
-const sourcesUrl = "localhost:8080/map/v1/";
+const sourcesUrl = "http://localhost:8080/";
 const glyphsUrl = `file://${process.env.WORK}/node_modules/hsl-map-style/`;
 
 module.exports = {
-  "/map/v1/hsl-vector": {
+  "/map/v2/hsl-vector-map": {
     "source": "mbtiles://./finland.mbtiles",
     "headers": {
       "Cache-Control": "public,max-age=3600"
