@@ -151,7 +151,9 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          greyscale: { enabled: true }
+          greyscale: { enabled: true },
+          simplified: { enabled: true },
+          municipal_borders: { enabled: true }
         }
       })
     },
@@ -167,7 +169,9 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          greyscale: { enabled: true }
+          greyscale: { enabled: true },
+          simplified: { enabled: true },
+          municipal_borders: { enabled: true }
         }
       })
     },
@@ -184,7 +188,9 @@ module.exports = {
         glyphsUrl,
         components: {
           text: { enabled: false },
-          greyscale: { enabled: true }
+          greyscale: { enabled: true },
+          simplified: { enabled: true },
+          municipal_borders: { enabled: true }
         }
       })
     },
@@ -201,7 +207,9 @@ module.exports = {
         glyphsUrl,
         components: {
           text: { enabled: false },
-          greyscale: { enabled: true }
+          greyscale: { enabled: true },
+          simplified: { enabled: true },
+          municipal_borders: { enabled: true }
         }
       })
     },
@@ -272,9 +280,6 @@ module.exports = {
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
-        components: {
-          simplified: { enabled: true }
-        }
       })
     },
     "headers": {
@@ -289,7 +294,7 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          simplified: { enabled: true }
+          icons: { enabled: true }
         }
       })
     },
@@ -305,8 +310,7 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          text_sv: { enabled: true },
-          simplified: { enabled: true }
+          text_sv: { enabled: true }
         }
       })
     },
@@ -323,7 +327,7 @@ module.exports = {
         glyphsUrl,
         components: {
           text_sv: { enabled: true },
-          simplified: { enabled: true }
+          icons: { enabled: true }
         }
       })
     },
@@ -339,8 +343,7 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          text_fisv: { enabled: true },
-          simplified: { enabled: true }
+          text_fisv: { enabled: true }
         }
       })
     },
@@ -357,7 +360,7 @@ module.exports = {
         glyphsUrl,
         components: {
           text_fisv: { enabled: true },
-          simplified: { enabled: true }
+          icons: { enabled: true }
         }
       })
     },
@@ -373,8 +376,7 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          text: { enabled: false },
-          simplified: { enabled: true }
+          text: { enabled: false }
         }
       })
     },
@@ -390,8 +392,7 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          text: { enabled: false },
-          simplified: { enabled: true }
+          text: { enabled: false }
         }
       })
     },
@@ -439,8 +440,7 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          text: { enabled: false },
-          greyscale: { enabled: true }
+          greyscale_no_text: { enabled: true }
         }
       })
     },
@@ -456,8 +456,7 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: {
-          text: { enabled: false },
-          greyscale: { enabled: true }
+          greyscale_no_text: { enabled: true }
         }
       })
     },
