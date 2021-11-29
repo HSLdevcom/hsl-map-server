@@ -48,9 +48,9 @@ echo Running $DOCKER_IMAGE
 docker run --rm -p 8080:8080 -h hsl-map-server --name hsl-map-server -e FONTSTACK_PASSWORD=$FONTSTACK_PASSWORD $DOCKER_IMAGE &
 sleep 60
 
-test http://localhost:8080/map/v1/hsl-map/14/9326/4739.png 80000
-test http://localhost:8080/map/v1/hsl-map-sv/14/9326/4739.png 80000
-test http://localhost:8080/map/v1/hsl-map-fi-sv/14/9326/4739.png 80000
+test http://localhost:8080/map/v1/hsl-map/14/9326/4739.png 50000
+test http://localhost:8080/map/v1/hsl-map-sv/14/9326/4739.png 50000
+test http://localhost:8080/map/v1/hsl-map-fi-sv/14/9326/4739.png 50000
 
 test http://localhost:8080/map/v1/hsl-stop-map/14/9326/4739.pbf 2000
 # test http://localhost:8080/map/v1/waltti-stop-map/14/9363/4546.pbf 2000
