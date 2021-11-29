@@ -1,7 +1,7 @@
 name: Process next push or pr
 on:
   schedule:
-   - cron:  '0 3 * * *'
+    - cron:  '0 3 * * *'
   push:
     branches:
       - next

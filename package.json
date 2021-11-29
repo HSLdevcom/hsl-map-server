@@ -18,10 +18,8 @@
   "homepage": "https://github.com/HSLdevcom/hsl-map-server#readme",
   "dependencies": {
     "@mapbox/mbtiles": "^0.12.1",
-    "@mapbox/tilejson": "^1.1.0",
-    "@mapbox/tilelive-vector": "^4.1.1",
     "forever": "^3.0.0",
-    "hsl-map-style": "hsldevcom/hsl-map-style#hsl-map-server-master",
+    "hsl-map-style": "hsldevcom/hsl-map-style#hsl-map-server",
     "tessera": "^0.13.1",
     "tilelive-gl": "hsldevcom/tilelive-gl#2f61ec0da7e5b13ca547fa5350905f3c2a688813",
     "tilelive-hsl-parkandride": "HSLdevcom/tilelive-hsl-parkandride",

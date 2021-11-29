@@ -3,6 +3,12 @@ const glyphsUrl = `file://${process.env.WORK}/node_modules/hsl-map-style/`;
 
 module.exports = {
   "/map/v1/hsl-vector-map": {
+    "source": "mbtiles://./finland-old.mbtiles",
+    "headers": {
+      "Cache-Control": "public,max-age=3600"
+    }
+  },  
+  "/map/v2/hsl-vector-map": {
     "source": "mbtiles://./finland.mbtiles",
     "headers": {
       "Cache-Control": "public,max-age=3600"
@@ -85,6 +91,34 @@ module.exports = {
         sourcesUrl,
         glyphsUrl,
         components: { icons: { enabled: true }, text_fisv: { enabled: true } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v1/hsl-map-no-text": {
+    "source": {
+      "protocol": "gl:",
+      "query": {},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { text: { enabled: false } }
+      })
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v1/hsl-map-no-text-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": {layerTileSize: 256},
+      "style": require("hsl-map-style").generateStyle({
+        sourcesUrl,
+        glyphsUrl,
+        components: { text: { enabled: false } }
       })
     },
     "headers": {
