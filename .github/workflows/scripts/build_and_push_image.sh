@@ -69,13 +69,11 @@ docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TAG
 docker push $DOCKER_IMAGE_TAG
 echo Pushed $DOCKER_IMAGE_TAG
 
-if [ -z "$DOCKER_TAG_OPTIONAL" ]
-  then
+if [ "$DOCKER_TAG_OPTIONAL" ]; then
     DOCKER_IMAGE_TAG_OPTIONAL=hsldevcom/hsl-map-server:$DOCKER_TAG_OPTIONAL
     docker tag $DOCKER_IMAGE $DOCKER_IMAGE_TAG_OPTIONAL
     docker push $DOCKER_IMAGE_TAG_OPTIONAL
     echo Pushed $DOCKER_IMAGE_TAG_OPTIONAL
 fi
-
 
 echo Build completed
