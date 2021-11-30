@@ -25,5 +25,5 @@ jobs:
           DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
           FONTSTACK_PASSWORD: ${{ secrets.FONTSTACK_PASSWORD }}
           DOCKER_TAG: prod
-          # Next tags will be deprecated, but build them still for a while.
-          DOCKER_TAG_OPTIONAL: next-prod
+          # Optional tag can be used in addition to the main one. E.g. 'dev' image could also be tagged as 'next'
+          DOCKER_TAG_OPTIONAL:
