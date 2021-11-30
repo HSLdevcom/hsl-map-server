@@ -1,7 +1,7 @@
 name: Process dev push or pr
 on:
   schedule:
-    - cron:  '0 2 * * *'
+   - cron:  '0 2 * * *'
   push:
     branches:
       - develop
@@ -17,11 +17,13 @@ jobs:
         with:
           ref: develop
       - name: Change permissions
-        run: chmod +x ./.github/workflows/scripts/build_and_push_dev.sh
+        run: chmod +x ./.github/workflows/scripts/build_and_push_image.sh
       - name: Build docker image from dev and push it
-        run: ./.github/workflows/scripts/build_and_push_dev.sh
+        run: ./.github/workflows/scripts/build_and_push_image.sh
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
           FONTSTACK_PASSWORD: ${{ secrets.FONTSTACK_PASSWORD }}
           DOCKER_TAG: dev
+          # Next tags will be deprecated, but build them still for a while.
+          DOCKER_TAG_OPTIONAL: next
