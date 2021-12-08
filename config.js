@@ -12,7 +12,7 @@ module.exports = {
   "/map/v2/hsl-map": {
     "source": {
       "protocol": "gl:",
-      "query": {},
+      "query": { bufferWidth: 8 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -28,7 +28,7 @@ module.exports = {
   "/map/v2/hsl-map-256": {
     "source": {
       "protocol": "gl:",
-      "query": { layerTileSize: 256 },
+      "query": { layerTileSize: 256, bufferWidth: 8 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -44,7 +44,7 @@ module.exports = {
   "/map/v2/hsl-map-sv": {
     "source": {
       "protocol": "gl:",
-      "query": {},
+      "query": { bufferWidth: 8 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -61,7 +61,7 @@ module.exports = {
   "/map/v2/hsl-map-sv-256": {
     "source": {
       "protocol": "gl:",
-      "query": { layerTileSize: 256 },
+      "query": { layerTileSize: 256, bufferWidth: 8 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -78,7 +78,7 @@ module.exports = {
   "/map/v2/hsl-map-fi-sv": {
     "source": {
       "protocol": "gl:",
-      "query": {},
+      "query": { bufferWidth: 8 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -95,7 +95,7 @@ module.exports = {
   "/map/v2/hsl-map-fi-sv-256": {
     "source": {
       "protocol": "gl:",
-      "query": { layerTileSize: 256 },
+      "query": { layerTileSize: 256, bufferWidth: 8 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -146,7 +146,7 @@ module.exports = {
   "/map/v2/hsl-map-greyscale": {
     "source": {
       "protocol": "gl:",
-      "query": {},
+      "query": { bufferWidth: 8 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -164,7 +164,7 @@ module.exports = {
   "/map/v2/hsl-map-greyscale-256": {
     "source": {
       "protocol": "gl:",
-      "query": { layerTileSize: 256 },
+      "query": { layerTileSize: 256, bufferWidth: 8 },
       "style": require("hsl-map-style").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -276,7 +276,7 @@ module.exports = {
   "/map/v1/hsl-map": {
     "source": {
       "protocol": "gl:",
-      "query": {},
+      "query": { bufferWidth: 8 },
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -289,7 +289,7 @@ module.exports = {
   "/map/v1/hsl-map-256": {
     "source": {
       "protocol": "gl:",
-      "query": { layerTileSize: 256 },
+      "query": { layerTileSize: 256, bufferWidth: 8 },
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -305,7 +305,7 @@ module.exports = {
   "/map/v1/hsl-map-sv": {
     "source": {
       "protocol": "gl:",
-      "query": {},
+      "query": { bufferWidth: 8 },
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -321,7 +321,7 @@ module.exports = {
   "/map/v1/hsl-map-sv-256": {
     "source": {
       "protocol": "gl:",
-      "query": { layerTileSize: 256 },
+      "query": { layerTileSize: 256, bufferWidth: 8 },
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -338,7 +338,7 @@ module.exports = {
   "/map/v1/hsl-map-fi-sv": {
     "source": {
       "protocol": "gl:",
-      "query": {},
+      "query": { bufferWidth: 8 },
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -354,7 +354,7 @@ module.exports = {
   "/map/v1/hsl-map-fi-sv-256": {
     "source": {
       "protocol": "gl:",
-      "query": { layerTileSize: 256 },
+      "query": { layerTileSize: 256, bufferWidth: 8 },
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -403,7 +403,7 @@ module.exports = {
   "/map/v1/hsl-map-greyscale": {
     "source": {
       "protocol": "gl:",
-      "query": {},
+      "query": { bufferWidth: 8 },
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
@@ -419,7 +419,7 @@ module.exports = {
   "/map/v1/hsl-map-greyscale-256": {
     "source": {
       "protocol": "gl:",
-      "query": { layerTileSize: 256 },
+      "query": { layerTileSize: 256, bufferWidth: 8 },
       "style": require("hsl-map-style-v1").generateStyle({
         sourcesUrl,
         glyphsUrl,
