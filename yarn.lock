@@ -1978,7 +1978,7 @@ hsl-map-style-v1@hsldevcom/hsl-map-style#hsl-map-server-v1:
 
 hsl-map-style@hsldevcom/hsl-map-style#development:
   version "1.0.0"
-  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/c3fafd83840caa238463a731b200b2fbdb1aa585"
+  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/22e25a5f66c2403952c44089384606c1ee3e613e"
   dependencies:
     lodash "^4.17.4"
 
