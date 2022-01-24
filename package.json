@@ -22,7 +22,7 @@
     "hsl-map-style": "hsldevcom/hsl-map-style#development",
     "hsl-map-style-v1": "hsldevcom/hsl-map-style#hsl-map-server-v1",
     "tessera": "^0.14.2",
-    "tilelive-gl": "hsldevcom/tilelive-gl#MM-312",
+    "tilelive-gl": "hsldevcom/tilelive-gl",
     "tilelive-hsl-parkandride": "HSLdevcom/tilelive-hsl-parkandride",
     "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales",
     "tilelive-otp-citybikes": "HSLdevcom/tilelive-otp-citybikes#493589481e96e32928a3f64eb6701ec1650334ff",

@@ -3352,9 +3352,9 @@ tilelive-cache@^0.7.1:
     locking-cache "^0.3.0"
     tilelive-streaming "^0.7.4"
 
-tilelive-gl@hsldevcom/tilelive-gl#MM-312:
+tilelive-gl@hsldevcom/tilelive-gl:
   version "0.0.3"
-  resolved "https://codeload.github.com/hsldevcom/tilelive-gl/tar.gz/a4160ae7ba8a3a75a816a9a302e3b56cea76add2"
+  resolved "https://codeload.github.com/hsldevcom/tilelive-gl/tar.gz/a076cfd6008ea6cd9e3a1e11b931e2b09e4dc2e2"
   dependencies:
     "@mapbox/mapbox-gl-native" "^5.0.2"
     generic-pool "^2.4.2"
