@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 jobs:
   docker-push:
     runs-on: ubuntu-18.04
@@ -23,7 +20,4 @@ jobs:
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
-          FONTSTACK_PASSWORD: ${{ secrets.FONTSTACK_PASSWORD }}
           DOCKER_TAG: prod
-          # Next tags will be deprecated, but build them still for a while.
-          DOCKER_TAG_OPTIONAL: next-prod
