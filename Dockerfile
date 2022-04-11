@@ -7,8 +7,11 @@ ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
 
 RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y curl ca-certificates pngquant libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa --no-install-recommends \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y curl ca-certificates libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa libjemalloc2 --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
+
+# This should prevent memory leak of sharp-package
+ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
 
 RUN mkdir -p ${WORK}
 WORKDIR ${WORK}
