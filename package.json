@@ -29,6 +29,7 @@
     "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops#cee37855b27a862f2f9eb59e0e938d747466ffd2"
   },
   "resolutions": {
-    "@mapbox/mapbox-gl-native": "^5.0.2"
+    "@mapbox/mapbox-gl-native": "^5.0.2",
+    "tilelive-gl/**/semver": "<=7.3.5"
   }
 }
