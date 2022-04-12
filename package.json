@@ -26,7 +26,7 @@
     "tilelive-hsl-parkandride": "hsldevcom/tilelive-hsl-parkandride",
     "tilelive-hsl-ticket-sales": "hsldevcom/tilelive-hsl-ticket-sales",
     "tilelive-otp-citybikes": "hsldevcom/tilelive-otp-citybikes",
-    "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops#cee37855b27a862f2f9eb59e0e938d747466ffd2"
+    "tilelive-otp-stops": "hsldevcom/tilelive-otp-stops"
   },
   "resolutions": {
     "@mapbox/mapbox-gl-native": "^5.0.2",
