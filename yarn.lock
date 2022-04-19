@@ -1385,7 +1385,7 @@ hsl-map-style-v1@hsldevcom/hsl-map-style#hsl-map-server-v1:
 
 hsl-map-style@hsldevcom/hsl-map-style#master:
   version "1.0.0"
-  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/0b5ab89df25dd6b60a9b813b01e666dc339fe0af"
+  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/041b3393aa6ff580683c2623398bb4aa9040dde8"
   dependencies:
     lodash "^4.17.4"
 
