@@ -18,18 +18,17 @@
   "homepage": "https://github.com/HSLdevcom/hsl-map-server#readme",
   "dependencies": {
     "@mapbox/mbtiles": "^0.12.1",
-    "forever": "<=4.0.2",
+    "forever": "^4.0.1",
     "hsl-map-style": "hsldevcom/hsl-map-style#master",
     "hsl-map-style-v1": "hsldevcom/hsl-map-style#hsl-map-server-v1",
     "tessera": "^0.14.2",
     "tilelive-gl": "hsldevcom/tilelive-gl",
     "tilelive-hsl-parkandride": "hsldevcom/tilelive-hsl-parkandride",
-    "tilelive-hsl-ticket-sales": "hsldevcom/tilelive-hsl-ticket-sales",
-    "tilelive-otp-citybikes": "hsldevcom/tilelive-otp-citybikes",
-    "tilelive-otp-stops": "hsldevcom/tilelive-otp-stops"
+    "tilelive-hsl-ticket-sales": "HSLdevcom/tilelive-hsl-ticket-sales",
+    "tilelive-otp-citybikes": "HSLdevcom/tilelive-otp-citybikes#493589481e96e32928a3f64eb6701ec1650334ff",
+    "tilelive-otp-stops": "HSLdevcom/tilelive-otp-stops#cee37855b27a862f2f9eb59e0e938d747466ffd2"
   },
   "resolutions": {
-    "@mapbox/mapbox-gl-native": "^5.0.2",
-    "tilelive-gl/**/semver": "<=7.3.5"
+    "@mapbox/mapbox-gl-native": "^5.0.2"
   }
 }
