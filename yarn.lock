@@ -3136,9 +3136,9 @@ request@^2.88.2:
     uuid "^3.3.2"
 
 requestretry@^7.0.2:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/requestretry/-/requestretry-7.0.2.tgz#22a169e5d3aaadd95d00401d7347511f3695faf4"
-  integrity sha512-Zz8z7G2OuVs4F0wR0shKMEMm7lNvPNHM0UIHNns9qfyuBDKSExoTsZGtSjKst6nPEwlMrbA9G+m/yC0AbGj+8w==
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/requestretry/-/requestretry-7.1.0.tgz#d16a1a57a95295211147841550603f3dc527541e"
+  integrity sha512-TqVDgp251BW4b8ddQ2ptaj/57Z3LZHLscAUT7v6qs70buqF2/IoOVjYbpjJ6HiW7j5+waqegGI8xKJ/+uzgDmw==
   dependencies:
     extend "^3.0.2"
     lodash "^4.17.15"
@@ -3818,7 +3818,7 @@ tilelive-otp-citybikes@hsldevcom/tilelive-otp-citybikes:
 
 tilelive-otp-stops@hsldevcom/tilelive-otp-stops:
   version "0.3.3"
-  resolved "https://codeload.github.com/hsldevcom/tilelive-otp-stops/tar.gz/8d6f1ccb0e113dd061c3fe76565ca05b059680d3"
+  resolved "https://codeload.github.com/hsldevcom/tilelive-otp-stops/tar.gz/ca3b94c1c96996e4b7bd6b69d4b39adcdfb8cd87"
   dependencies:
     geojson-vt "^3.2.1"
     lodash "^4.17.21"
