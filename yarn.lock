@@ -3818,7 +3818,7 @@ tilelive-otp-citybikes@hsldevcom/tilelive-otp-citybikes:
 
 tilelive-otp-stops@hsldevcom/tilelive-otp-stops:
   version "0.3.3"
-  resolved "https://codeload.github.com/hsldevcom/tilelive-otp-stops/tar.gz/6f12b5efc0e82d5aab40bdc048536c83e13d3aa3"
+  resolved "https://codeload.github.com/hsldevcom/tilelive-otp-stops/tar.gz/98a6f2f29d7a43a21b3df1c0525492d9c1824fe0"
   dependencies:
     geojson-vt "^3.2.1"
     lodash "^4.17.21"
