@@ -22,6 +22,7 @@
     "hsl-map-style": "hsldevcom/hsl-map-style#master",
     "hsl-map-style-v1": "hsldevcom/hsl-map-style#hsl-map-server-v1",
     "tessera": "^0.14.2",
+    "tilelive-geojson": "hsldevcom/tilelive-geojson",
     "tilelive-gl": "hsldevcom/tilelive-gl",
     "tilelive-hsl-parkandride": "hsldevcom/tilelive-hsl-parkandride",
     "tilelive-hsl-ticket-sales": "hsldevcom/tilelive-hsl-ticket-sales",
