@@ -5,5 +5,8 @@ const dummyGeojsonWrangler = (body) => {
 };
 
 module.exports = {
-  dummyGeojsonWrangler,
+  queries: {},
+  wranglers: {
+    dummyGeojsonWrangler,
+  },
 };

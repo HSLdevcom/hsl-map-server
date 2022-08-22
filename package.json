@@ -4,7 +4,7 @@
   "description": "HSL map server",
   "main": "config.js",
   "scripts": {
-    "download": "node download/index.js",
+    "data-fetcher": "node data-fetcher/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

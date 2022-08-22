@@ -31,7 +31,7 @@ RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbti
 EXPOSE 8080
 
 CMD \
-  yarn run download && \
+  yarn run data-fetcher && \
   Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
   DISPLAY=":10" yarn forever start --spinSleepTime 60000 --minUptime 30000 -c "node ${NODE_OPTS}" \
     node_modules/tessera/bin/tessera.js --port 8080 --config dev-config.js \

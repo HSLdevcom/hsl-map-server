@@ -1,7 +1,7 @@
 const {
   TICKET_SALES_URL
 } = require("../constants");
-const { dummyGeojsonWrangler } = require("./wranglers");
+const { queries, wranglers } = require("./data");
 
 const layers = [
   {
@@ -9,7 +9,7 @@ const layers = [
     sources: [
       {
         url: TICKET_SALES_URL,
-        wrangler: dummyGeojsonWrangler,
+        wrangler: wranglers.dummyGeojsonWrangler,
         file: "hsl-ticket-sales.geojson",
       }
     ]

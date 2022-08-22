@@ -1,7 +1,7 @@
 // Script to download and save all data sources from configuration file.
 
-const layers = require("./data-configurations");
-const { fetchAndSaveData } = require("./util");
+const layers = require("./configurations");
+const { fetchAndSaveData } = require("./fetcher");
 
 const dataProcesses = layers.map((layer) => (
   Promise.all(layer.sources.map((source) => fetchAndSaveData(
