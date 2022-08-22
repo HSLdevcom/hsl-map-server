@@ -4,7 +4,7 @@
   "description": "HSL map server",
   "main": "config.js",
   "scripts": {
-    "download": "node download/ticket-sales.js",
+    "download": "node download/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "forever": "<=4.0.2",
     "hsl-map-style": "hsldevcom/hsl-map-style#master",
     "hsl-map-style-v1": "hsldevcom/hsl-map-style#hsl-map-server-v1",
+    "requestretry": "^7.1.0",
     "tessera": "^0.14.2",
     "tilelive-geojson": "hsldevcom/tilelive-geojson",
     "tilelive-gl": "hsldevcom/tilelive-gl",
