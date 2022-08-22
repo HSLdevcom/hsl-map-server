@@ -22,12 +22,12 @@
     "forever": "<=4.0.2",
     "hsl-map-style": "hsldevcom/hsl-map-style#master",
     "hsl-map-style-v1": "hsldevcom/hsl-map-style#hsl-map-server-v1",
+    "request": "^2.88.2",
     "requestretry": "^7.1.0",
     "tessera": "^0.14.2",
     "tilelive-geojson": "hsldevcom/tilelive-geojson",
     "tilelive-gl": "hsldevcom/tilelive-gl",
     "tilelive-hsl-parkandride": "hsldevcom/tilelive-hsl-parkandride",
-    "tilelive-hsl-ticket-sales": "hsldevcom/tilelive-hsl-ticket-sales",
     "tilelive-otp-citybikes": "hsldevcom/tilelive-otp-citybikes",
     "tilelive-otp-stops": "hsldevcom/tilelive-otp-stops"
   },

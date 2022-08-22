@@ -5,7 +5,7 @@ ENV FINLAND_OTP_URL api.digitransit.fi/routing/v1/routers/finland/index/graphql
 ENV WALTTI_OTP_URL api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 ENV WORK=/opt/hsl-map-server
 ENV NODE_OPTS ""
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y curl ca-certificates libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-video-dummy libgles2-mesa libjemalloc2 --no-install-recommends \
@@ -23,10 +23,10 @@ RUN yarn install && yarn cache clean
 COPY . ${WORK}
 
 # New OpenMapTiles schema
-RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles > finland.mbtiles
+# RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles > finland.mbtiles
 
 # Deprecated schema. Should be removed at some point, but important to include until all clients are using the new schema.
-RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland-old-schema.mbtiles
+# RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland-old-schema.mbtiles
 
 EXPOSE 8080
 

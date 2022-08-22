@@ -4541,15 +4541,6 @@ tilelive-hsl-parkandride@hsldevcom/tilelive-hsl-parkandride:
     requestretry "^7.0.2"
     vt-pbf "^3.1.3"
 
-tilelive-hsl-ticket-sales@hsldevcom/tilelive-hsl-ticket-sales:
-  version "0.0.1"
-  resolved "https://codeload.github.com/hsldevcom/tilelive-hsl-ticket-sales/tar.gz/55e5aa6c0facfc8c49f6702cafb20b450c77ec8c"
-  dependencies:
-    geojson-vt "^3.2.1"
-    request "^2.88.2"
-    requestretry "^7.0.2"
-    vt-pbf "^3.1.3"
-
 tilelive-modules@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/tilelive-modules/-/tilelive-modules-0.4.2.tgz#6a0afd72e3956510f6da48a55c702805921bfcfa"
