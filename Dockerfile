@@ -38,7 +38,5 @@ CMD \
       -r ${WORK}/node_modules/tilelive-otp-citybikes/ \
       -r ${WORK}/node_modules/tilelive-otp-stops/ \
       -r ${WORK}/node_modules/tilelive-gl/ \
-      -r ${WORK}/node_modules/tilelive-hsl-parkandride \
-      -r ${WORK}/node_modules/tilelive-hsl-ticket-sales \
       -r ${WORK}/node_modules/tilelive-geojson && \
   yarn forever --fifo logs 0

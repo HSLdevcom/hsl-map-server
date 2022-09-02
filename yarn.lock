@@ -4516,7 +4516,7 @@ tilelive-cache@^0.7.1:
 
 tilelive-geojson@hsldevcom/tilelive-geojson:
   version "0.0.1"
-  resolved "https://codeload.github.com/hsldevcom/tilelive-geojson/tar.gz/0d3e789adfb9d93ed2e964833deac9e074425947"
+  resolved "https://codeload.github.com/hsldevcom/tilelive-geojson/tar.gz/48364e7aabc84448b82d156947a12128e6304197"
   dependencies:
     geojson-vt "^3.2.1"
     vt-pbf "^3.1.3"
