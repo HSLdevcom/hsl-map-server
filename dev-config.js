@@ -33,6 +33,38 @@ module.exports = {
       "Cache-Control": "public,max-age=604800"
     }
   },
+  "/map/v2/finland-citybike-map": {
+    "source": {
+      "protocol": "geojson:",
+      "query": {},
+      "name": "OTP Citybikes",
+      "maxzoom": 20,
+      "sources": [{
+        "id": "stations",
+        "description": "",
+        "file": "/opt/hsl-map-server/finland-citybikes.geojson",
+      }]
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v2/waltti-citybike-map": {
+    "source": {
+      "protocol": "geojson:",
+      "query": {},
+      "name": "OTP Citybikes",
+      "maxzoom": 20,
+      "sources": [{
+        "id": "stations",
+        "description": "",
+        "file": "/opt/hsl-map-server/waltti-citybikes.geojson",
+      }]
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
   "/map/v2/hsl-parkandride": {
     "source": {
       "protocol": "geojson:",

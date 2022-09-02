@@ -1,5 +1,7 @@
 const {
   HSL_OTP_URL,
+  FINLAND_OTP_URL,
+  WALTTI_OTP_URL,
   PARKANDRIDE_URL,
   TICKET_SALES_URL
 } = require("../constants");
@@ -14,6 +16,28 @@ const layers = [
         gqlQuery: queries.citybikeQuery,
         wrangler: wranglers.citybikeWrangler,
         file: "hsl-citybikes.geojson",
+      }
+    ]
+  },
+  {
+    name: "finland-citybikes",
+    sources: [
+      {
+        url: FINLAND_OTP_URL,
+        gqlQuery: queries.citybikeQuery,
+        wrangler: wranglers.citybikeWrangler,
+        file: "finland-citybikes.geojson",
+      }
+    ]
+  },
+  {
+    name: "waltti-citybikes",
+    sources: [
+      {
+        url: WALTTI_OTP_URL,
+        gqlQuery: queries.citybikeQuery,
+        wrangler: wranglers.citybikeWrangler,
+        file: "waltti-citybikes.geojson",
       }
     ]
   },
