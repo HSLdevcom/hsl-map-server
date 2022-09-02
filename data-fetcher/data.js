@@ -1,3 +1,14 @@
+// TODO: Array.prototype shoud be read only. Change implementation to the better one
+const _ = require("lodash");
+
+Array.prototype.flatMap = function(lambda) {
+  return [].concat.apply([],this.map(lambda));
+};
+
+Array.prototype.uniq = function() {
+  return _.uniqWith(this, _.isEqual)
+};
+
 // This just modifies response body to json object
 const dummyGeojsonWrangler = (body) => {
   const geojsonData = JSON.parse(body);
