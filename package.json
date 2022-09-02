@@ -27,7 +27,6 @@
     "tessera": "^0.14.2",
     "tilelive-geojson": "hsldevcom/tilelive-geojson",
     "tilelive-gl": "hsldevcom/tilelive-gl",
-    "tilelive-hsl-parkandride": "hsldevcom/tilelive-hsl-parkandride",
     "tilelive-otp-citybikes": "hsldevcom/tilelive-otp-citybikes",
     "tilelive-otp-stops": "hsldevcom/tilelive-otp-stops"
   },
