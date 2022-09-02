@@ -4537,16 +4537,6 @@ tilelive-modules@^0.4.1:
   resolved "https://registry.yarnpkg.com/tilelive-modules/-/tilelive-modules-0.4.2.tgz#6a0afd72e3956510f6da48a55c702805921bfcfa"
   integrity sha512-4J3cucRXubdkn0Woq4X1nGeBA1O2gabAdTmIVIdZ9f5liLIHLEeKfDaVsCrOrJfk/BgUCTRgKQ3aXng0GfX+ZA==
 
-tilelive-otp-stops@hsldevcom/tilelive-otp-stops:
-  version "0.3.3"
-  resolved "https://codeload.github.com/hsldevcom/tilelive-otp-stops/tar.gz/98a6f2f29d7a43a21b3df1c0525492d9c1824fe0"
-  dependencies:
-    geojson-vt "^3.2.1"
-    lodash "^4.17.21"
-    request "^2.88.2"
-    requestretry "^7.0.2"
-    vt-pbf "^3.1.3"
-
 tilelive-streaming@^0.7.4:
   version "0.7.7"
   resolved "https://registry.yarnpkg.com/tilelive-streaming/-/tilelive-streaming-0.7.7.tgz#4e1f75628c596c669fcc52a977ae482c17ef9951"

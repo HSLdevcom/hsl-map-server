@@ -27,8 +27,7 @@
     "requestretry": "^7.1.0",
     "tessera": "^0.14.2",
     "tilelive-geojson": "hsldevcom/tilelive-geojson",
-    "tilelive-gl": "hsldevcom/tilelive-gl",
-    "tilelive-otp-stops": "hsldevcom/tilelive-otp-stops"
+    "tilelive-gl": "hsldevcom/tilelive-gl"
   },
   "resolutions": {
     "@mapbox/mapbox-gl-native": "^5.0.2",

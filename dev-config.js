@@ -65,6 +65,72 @@ module.exports = {
       "Cache-Control": "public,max-age=604800"
     }
   },
+  "/map/v2/hsl-stops-map": {
+    "source": {
+      "protocol": "geojson:",
+      "query": {},
+      "name": "Stops",
+      "maxzoom": 20,
+      "bounds": [18, 58, 32, 71],
+      "center": [24.9, 60.1, 14],
+      "sources": [{
+        "id": "stops",
+        "description": "",
+        "file": "/opt/hsl-map-server/hsl-stops.geojson",
+      }, {
+        "id": "stations",
+        "description": "",
+        "file": "/opt/hsl-map-server/hsl-stations.geojson",
+      }]
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v2/finland-stops-map": {
+    "source": {
+      "protocol": "geojson:",
+      "query": {},
+      "name": "Stops",
+      "maxzoom": 20,
+      "bounds": [18, 58, 32, 71],
+      "center": [24.9, 60.1, 14],
+      "sources": [{
+        "id": "stops",
+        "description": "",
+        "file": "/opt/hsl-map-server/finland-stops.geojson",
+      }, {
+        "id": "stations",
+        "description": "",
+        "file": "/opt/hsl-map-server/finland-stations.geojson",
+      }]
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
+  "/map/v2/waltti-stops-map": {
+    "source": {
+      "protocol": "geojson:",
+      "query": {},
+      "name": "Stops",
+      "maxzoom": 20,
+      "bounds": [18, 58, 32, 71],
+      "center": [24.9, 60.1, 14],
+      "sources": [{
+        "id": "stops",
+        "description": "",
+        "file": "/opt/hsl-map-server/waltti-stops.geojson",
+      }, {
+        "id": "stations",
+        "description": "",
+        "file": "/opt/hsl-map-server/waltti-stations.geojson",
+      }]
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
   "/map/v2/hsl-parkandride": {
     "source": {
       "protocol": "geojson:",
