@@ -8,6 +8,7 @@ const dataProcesses = layers.map((layer) => (
     source.url,
     source.wrangler,
     source.file,
+    source.gqlQuery,
   )
     .then((err) => ({
       file: source.file,

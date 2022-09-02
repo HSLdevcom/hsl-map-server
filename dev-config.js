@@ -17,6 +17,22 @@ module.exports = {
       "Cache-Control": "public,max-age=604800"
     }
   },
+  "/map/v2/hsl-citybike-map": {
+    "source": {
+      "protocol": "geojson:",
+      "query": {},
+      "name": "OTP Citybikes",
+      "maxzoom": 20,
+      "sources": [{
+        "id": "stations",
+        "description": "",
+        "file": "/opt/hsl-map-server/hsl-citybikes.geojson",
+      }]
+    },
+    "headers": {
+      "Cache-Control": "public,max-age=604800"
+    }
+  },
   "/map/v2/hsl-parkandride": {
     "source": {
       "protocol": "geojson:",

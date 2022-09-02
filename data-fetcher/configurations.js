@@ -1,10 +1,22 @@
 const {
+  HSL_OTP_URL,
   PARKANDRIDE_URL,
   TICKET_SALES_URL
 } = require("../constants");
 const { queries, wranglers } = require("./data");
 
 const layers = [
+  {
+    name: "hsl-citybikes",
+    sources: [
+      {
+        url: HSL_OTP_URL,
+        gqlQuery: queries.citybikeQuery,
+        wrangler: wranglers.citybikeWrangler,
+        file: "hsl-citybikes.geojson",
+      }
+    ]
+  },
   {
     name: "hsl-parkandride",
     sources: [
