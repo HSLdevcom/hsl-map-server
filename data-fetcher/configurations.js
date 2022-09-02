@@ -9,6 +9,57 @@ const { queries, wranglers } = require("./data");
 
 const layers = [
   {
+    name: "hsl-stops",
+    sources: [
+      {
+        url: HSL_OTP_URL,
+        gqlQuery: queries.stopQuery,
+        wrangler: wranglers.stopWrangler,
+        file: "hsl-stops.geojson",
+      },
+      {
+        url: HSL_OTP_URL,
+        gqlQuery: queries.stationQuery,
+        wrangler: wranglers.stationWrangler,
+        file: "hsl-stations.geojson",
+      }
+    ]
+  },
+  {
+    name: "finland-stops",
+    sources: [
+      {
+        url: FINLAND_OTP_URL,
+        gqlQuery: queries.stopQuery,
+        wrangler: wranglers.stopWrangler,
+        file: "finland-stops.geojson",
+      },
+      {
+        url: FINLAND_OTP_URL,
+        gqlQuery: queries.stationQuery,
+        wrangler: wranglers.stationWrangler,
+        file: "finland-stations.geojson",
+      }
+    ]
+  },
+  {
+    name: "waltti-stops",
+    sources: [
+      {
+        url: WALTTI_OTP_URL,
+        gqlQuery: queries.stopQuery,
+        wrangler: wranglers.stopWrangler,
+        file: "waltti-stops.geojson",
+      },
+      {
+        url: WALTTI_OTP_URL,
+        gqlQuery: queries.stationQuery,
+        wrangler: wranglers.stationWrangler,
+        file: "waltti-stations.geojson",
+      }
+    ]
+  },
+  {
     name: "hsl-citybikes",
     sources: [
       {
