@@ -1,13 +1,13 @@
 const fs = require("fs");
 const request = require("requestretry");
 
-const { WORK_DIR } = require("../constants");
+const { DATA_DIR } = require("../constants");
 
 const dummyData = { "type": "Feature", "properties": {}, "geometry": null }; // Empty geometry to be used if url doesn't respond correctly
 
 const saveJson = (data, filename) => {
   const content = JSON.stringify(data); // All data should be GeoJSON at this point.
-  fs.writeFileSync(`${WORK_DIR}/${filename}`, content);
+  fs.writeFileSync(`${DATA_DIR}/${filename}`, content);
 };
 
 const fetchAndSaveData = (dataUrl, wrangler, filename, gqlQuery) => {

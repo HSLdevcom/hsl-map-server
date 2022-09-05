@@ -1,6 +1,7 @@
 FROM node:10-buster-slim
 
 ENV WORK=/opt/hsl-map-server
+ENV DATA_DIR=${WORK}/data
 ENV NODE_OPTS ""
 ENV NODE_ENV=production
 
@@ -19,11 +20,13 @@ RUN yarn install && yarn cache clean
 
 COPY . ${WORK}
 
+RUN mkdir -p ${DATA_DIR}
+
 # New OpenMapTiles schema
-RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles > finland.mbtiles
+RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles > ${DATA_DIR}/finland.mbtiles
 
 # Deprecated schema. Should be removed at some point, but important to include until all clients are using the new schema.
-RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland-old-schema.mbtiles
+RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > ${DATA_DIR}/finland-old-schema.mbtiles
 
 EXPOSE 8080
 

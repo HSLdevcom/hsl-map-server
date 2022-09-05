@@ -1,12 +1,14 @@
 const hslMapStyle = require("hsl-map-style");
 
+const { DATA_DIR } = require("./constants");
+
 const sourcesUrl = "http://localhost:8080/";
 
 const rasterHeaders = { "headers": { "Cache-Control": "public,max-age=604800" } };
 const vectorHeaders = { "headers": { "Cache-Control": "public,max-age=43200" } };
 
 // Common defaults for vector data layers.
-const vectorSourceFrame = {
+const geojsonSourceProps = {
   "protocol": "geojson:",
   "query": {},
   "maxzoom": 20,
@@ -22,49 +24,49 @@ module.exports = {
 
   // New v2 endpoint. Uses OpenMapTiles schema.
   "/map/v2/hsl-vector-map": {
-    "source": "mbtiles://./finland.mbtiles",
+    "source": `mbtiles://${DATA_DIR}/finland.mbtiles`,
     ...vectorHeaders,
   },
   // Endpoint for the old deprecated schema. Remove after not needed any more.
   "/map/v1/hsl-vector-map": {
-    "source": "mbtiles://./finland-old-schema.mbtiles",
+    "source": `mbtiles://${DATA_DIR}/finland-old-schema.mbtiles`,
     ...vectorHeaders,
   },
 
   // Citybike maps
   "/map/:version(v1|v2)/hsl-citybike-map": {
     "source": {
-      ...vectorSourceFrame,
+      ...geojsonSourceProps,
       "center": hslCenter,
       "name": "HSL Citybikes",
       "sources": [{
         "id": "stations",
-        "file": "/opt/hsl-map-server/hsl-citybikes.geojson",
+        "file": `${DATA_DIR}/hsl-citybikes.geojson`,
       }]
     },
     ...vectorHeaders,
   },
   "/map/:version(v1|v2)/waltti-citybike-map": {
     "source": {
-      ...vectorSourceFrame,
+      ...geojsonSourceProps,
       "center": finlandCenter,
       "name": "Waltti Citybikes",
       "maxzoom": 20,
       "sources": [{
         "id": "stations",
-        "file": "/opt/hsl-map-server/waltti-citybikes.geojson",
+        "file": `${DATA_DIR}/waltti-citybikes.geojson`,
       }]
     },
     ...vectorHeaders,
   },
   "/map/:version(v1|v2)/finland-citybike-map": {
     "source": {
-      ...vectorSourceFrame,
+      ...geojsonSourceProps,
       "center": finlandCenter,
       "name": "Finland Citybikes",
       "sources": [{
         "id": "stations",
-        "file": "/opt/hsl-map-server/finland-citybikes.geojson",
+        "file": `${DATA_DIR}/finland-citybikes.geojson`,
       }]
     },
     ...vectorHeaders,
@@ -73,15 +75,15 @@ module.exports = {
   // Stop maps
   "/map/:version(v1|v2)/hsl-stop-map": {
     "source": {
-      ...vectorSourceFrame,
+      ...geojsonSourceProps,
       "center": hslCenter,
       "name": "Stops",
       "sources": [{
         "id": "stops",
-        "file": "/opt/hsl-map-server/hsl-stops.geojson",
+        "file": `${DATA_DIR}/hsl-stops.geojson`,
       }, {
         "id": "stations",
-        "file": "/opt/hsl-map-server/hsl-stations.geojson",
+        "file": `${DATA_DIR}/hsl-stations.geojson`,
       }]
     },
     ...vectorHeaders,
@@ -89,15 +91,15 @@ module.exports = {
   },
   "/map/:version(v1|v2)/finland-stop-map": {
     "source": {
-      ...vectorSourceFrame,
+      ...geojsonSourceProps,
       "center": finlandCenter,
       "name": "Stops",
       "sources": [{
         "id": "stops",
-        "file": "/opt/hsl-map-server/finland-stops.geojson",
+        "file": `${DATA_DIR}/finland-stops.geojson`,
       }, {
         "id": "stations",
-        "file": "/opt/hsl-map-server/finland-stations.geojson",
+        "file": `${DATA_DIR}/finland-stations.geojson`,
       }]
     },
     ...vectorHeaders,
@@ -105,16 +107,15 @@ module.exports = {
   },
   "/map/:version(v1|v2)/waltti-stop-map": {
     "source": {
-      ...vectorSourceFrame,
+      ...geojsonSourceProps,
       "center": finlandCenter,
       "name": "Stops",
       "sources": [{
         "id": "stops",
-        "file": "/opt/hsl-map-server/waltti-stops.geojson",
+        "file": `${DATA_DIR}/waltti-stops.geojson`,
       }, {
         "id": "stations",
-        "description": "",
-        "file": "/opt/hsl-map-server/waltti-stations.geojson",
+        "file": `${DATA_DIR}/waltti-stations.geojson`,
       }]
     },
     ...vectorHeaders,
@@ -124,15 +125,15 @@ module.exports = {
   // Park and ride map (Liityntäpysäköinti)
   "/map/:version(v1|v2)/hsl-parkandride-map": {
     "source": {
-      ...vectorSourceFrame,
+      ...geojsonSourceProps,
       "center": hslCenter,
       "name": "HSL Park & Ride",
       "sources": [{
         "id": "facilities",
-        "file": "/opt/hsl-map-server/hsl-parkandride-facilities.geojson",
+        "file": `${DATA_DIR}/hsl-parkandride-facilities.geojson`,
       }, {
         "id": "hubs",
-        "file": "/opt/hsl-map-server/hsl-parkandride-hubs.geojson",
+        "file": `${DATA_DIR}/hsl-parkandride-hubs.geojson`,
       }]
     },
     ...vectorHeaders,
@@ -141,12 +142,12 @@ module.exports = {
   // Ticket sales point map
   "/map/:version(v1|v2)/hsl-ticket-sales-map": {
     "source": {
-      ...vectorSourceFrame,
+      ...geojsonSourceProps,
       "center": hslCenter,
       "name": "Ticket sales",
       "sources": [{
         "id": "ticket-sales",
-        "file": "/opt/hsl-map-server/hsl-ticket-sales.geojson",
+        "file": `${DATA_DIR}/hsl-ticket-sales.geojson`,
       }]
     },
     ...vectorHeaders,

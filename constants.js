@@ -4,5 +4,5 @@ module.exports = {
   HSL_OTP_URL: process.env.HSL_OTP_URL || "https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql",
   FINLAND_OTP_URL: process.env.FINLAND_OTP_URL || "https://api.digitransit.fi/routing/v1/routers/finland/index/graphql",
   WALTTI_OTP_URL: process.env.WALTTI_OTP_URL || "https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql",
-  WORK_DIR: process.env.WORK || process.env.PWD,
+  DATA_DIR: process.env.DATA_DIR || `${process.env.WORK}/data` || `${process.env.PWD}/data`,
 };
