@@ -1,13 +1,4 @@
-// TODO: Array.prototype shoud be read only. Change implementation to the better one
 const _ = require("lodash");
-
-Array.prototype.flatMap = function(lambda) {
-  return [].concat.apply([],this.map(lambda));
-};
-
-Array.prototype.uniq = function() {
-  return _.uniqWith(this, _.isEqual)
-};
 
 // This just modifies response body to json object
 const dummyGeojsonWrangler = (body) => {
@@ -42,10 +33,11 @@ const stopQuery = `
 `;
 
 const stopWrangler = (body) => {
-  const stopData = JSON.parse(body);
+  const { data } = JSON.parse(body);
+
   return {
     type: "FeatureCollection",
-    features: stopData.data.stops.map((stop) => ({
+    features: data.stops.map((stop) => ({
       type: "Feature",
       geometry: {
         type: "Point",
@@ -58,7 +50,7 @@ const stopWrangler = (body) => {
         platform: stop.platformCode == null ? "null" : stop.platformCode, // TODO: 'null' -string should be changed to null after the map style of HSL app has been updated.
         desc: stop.desc,
         parentStation: stop.parentStation == null ? "null" : stop.parentStation.gtfsId, // TODO: 'null' -string should be changed to null after the map style of HSL app has been updated.
-        type: stop.patterns == null ? null : stop.patterns.map((pattern) => pattern.route.mode).uniq().join(","),
+        type: stop.patterns == null ? null : _.uniq(stop.patterns.map((pattern) => pattern.route.mode)).join(","),
         patterns: stop.patterns == null ? null : JSON.stringify(stop.patterns.map((pattern) => ({
           headsign: pattern.headsign,
           type: pattern.route.mode,
@@ -93,10 +85,11 @@ const stationQuery = `
 `;
 
 const stationWrangler = (body) => {
-  const stationData = JSON.parse(body);
+  const { data } = JSON.parse(body);
+
   return {
     type: "FeatureCollection",
-    features: stationData.data.stations.map((station) => ({
+    features: data.stations.map((station) => ({
       type: "Feature",
       geometry: {
         type: "Point",
@@ -105,15 +98,15 @@ const stationWrangler = (body) => {
       properties: {
         gtfsId: station.gtfsId,
         name: station.name,
-        type: Array.from(new Set(station.stops.flatMap((stop) => (
-          stop.patterns.flatMap((pattern) => (
+        type: _.uniq(_.flatten(station.stops.map((stop) => (
+          stop.patterns.map((pattern) => (
             pattern.route.mode
           ))
         )))).join(","),
         stops: JSON.stringify(station.stops.map((stop) => stop.gtfsId)),
-        routes: JSON.stringify(station.stops.flatMap((stop) => (
-          stop.patterns.flatMap((pattern) => pattern.route)
-        )).uniq()),
+        routes: JSON.stringify(_.uniqWith(_.flatten(station.stops.map((stop) => (
+          stop.patterns.map((pattern) => pattern.route)
+        ))), _.isEqual)),
       }
     }))
   };
@@ -132,10 +125,10 @@ const citybikeQuery = `
 `;
 
 const citybikeWrangler = (body) => {
-  const citybikeData = JSON.parse(body);
-  return ({
+  const { data } = JSON.parse(body);
+  return {
     type: "FeatureCollection",
-    features: citybikeData.data.bikeRentalStations.map((station) => ({
+    features: data.bikeRentalStations.map((station) => ({
       type: "Feature",
       geometry: {
         type: "Point",
@@ -147,7 +140,7 @@ const citybikeWrangler = (body) => {
         networks: station.networks.join()
       }
     }))
-  });
+  };
 };
 
 module.exports = {
