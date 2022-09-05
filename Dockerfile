@@ -1,9 +1,7 @@
 FROM node:10-buster-slim
 
-ENV HSL_OTP_URL api.digitransit.fi/routing/v1/routers/hsl/index/graphql
-ENV FINLAND_OTP_URL api.digitransit.fi/routing/v1/routers/finland/index/graphql
-ENV WALTTI_OTP_URL api.digitransit.fi/routing/v1/routers/waltti/index/graphql
 ENV WORK=/opt/hsl-map-server
+ENV DATA_DIR=${WORK}/data
 ENV NODE_OPTS ""
 ENV NODE_ENV=production
 
@@ -22,20 +20,21 @@ RUN yarn install && yarn cache clean
 
 COPY . ${WORK}
 
+RUN mkdir -p ${DATA_DIR}
+
 # New OpenMapTiles schema
-RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles > finland.mbtiles
+RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles > ${DATA_DIR}/finland.mbtiles
 
 # Deprecated schema. Should be removed at some point, but important to include until all clients are using the new schema.
-RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > finland-old-schema.mbtiles
+RUN curl https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles > ${DATA_DIR}/finland-old-schema.mbtiles
 
 EXPOSE 8080
 
-CMD Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
+CMD \
+  yarn run data-fetcher && \
+  (Xorg -dpi 96 -nolisten tcp -noreset +extension GLX +extension RANDR +extension RENDER -logfile ./10.log -config ./xorg.conf :10 & \
   DISPLAY=":10" yarn forever start --spinSleepTime 60000 --minUptime 30000 -c "node ${NODE_OPTS}" \
     node_modules/tessera/bin/tessera.js --port 8080 --config config.js \
-      -r ${WORK}/node_modules/tilelive-otp-citybikes/ \
-      -r ${WORK}/node_modules/tilelive-otp-stops/ \
       -r ${WORK}/node_modules/tilelive-gl/ \
-      -r ${WORK}/node_modules/tilelive-hsl-parkandride \
-      -r ${WORK}/node_modules/tilelive-hsl-ticket-sales && \
-  yarn forever --fifo logs 0
+      -r ${WORK}/node_modules/tilelive-geojson && \
+  yarn forever --fifo logs 0)
