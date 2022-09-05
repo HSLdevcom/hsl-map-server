@@ -1,5 +1,6 @@
 // Script to download and save all data sources from configuration file.
 
+const _ = require("lodash");
 const layers = require("./configurations");
 const { fetchAndSaveData } = require("./fetcher");
 
@@ -10,11 +11,11 @@ const dataProcesses = layers.map((layer) => (
     source.file,
     source.gqlQuery,
   )
-    .then((err) => ({
+    .then((err) => (_.pickBy({
       file: source.file,
       status: !err ? "ok" : "error",
       error: err && err.toString(),
-    }))))
+    }, (d) => d !== undefined)))))
 ));
 
 Promise.all(dataProcesses)
