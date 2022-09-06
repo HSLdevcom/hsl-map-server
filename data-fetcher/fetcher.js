@@ -15,7 +15,7 @@ const fetchAndSaveData = (dataUrl, wrangler, filename, gqlQuery) => {
 
   const commonRequestParams = {
     uri,
-    maxAttempts: 3,
+    maxAttempts: Number(process.env.DOWNLOAD_RETRY_COUNT) || 3,
     retryDelay: 15000,
     followAllRedirects: true,
     fullResponse: false,
