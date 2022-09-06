@@ -30,7 +30,11 @@ const fetchAndSaveData = (dataUrl, wrangler, filename, gqlQuery) => {
     body: gqlQuery,
     method: "POST",
     headers: {
-      "Content-Type": "application/graphql"
+      "Content-Type": "application/graphql",
+      // These are some OTP specific headers. Restructure them to specific queries
+      // if some other gql api is used, and these headers broke the query.
+      "OTPTimeout": "120000",
+      "OTPMaxResolves": "100000000",
     }
   };
 
