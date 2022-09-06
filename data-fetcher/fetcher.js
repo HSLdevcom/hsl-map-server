@@ -13,23 +13,21 @@ const saveJson = (data, filename) => {
 const fetchAndSaveData = (dataUrl, wrangler, filename, gqlQuery) => {
   const uri = dataUrl.startsWith("http") ? dataUrl : `http://${dataUrl}`;
 
-  const getRequestParams = {
+  const commonRequestParams = {
     uri,
     maxAttempts: 3,
-    retryDelay: 20000,
+    retryDelay: 15000,
     followAllRedirects: true,
     fullResponse: false,
-    retryStrategy: (err, response) => (
-      request.RetryStrategies.HTTPOrNetworkError || response.statusCode !== 200
-    ),
+    retryStrategy: (err, response) => {
+      const retry = request.RetryStrategies.HTTPOrNetworkError(err, response);
+      if (retry) console.log(`An error on ${uri}. Response status code was ${response.statusCode}. Retrying...`);
+      return retry;
+    },
   };
 
   const gqlRequestParams = {
-    uri,
     body: gqlQuery,
-    maxAttempts: 1,
-    retryDelay: 30000,
-    fullResponse: false,
     method: "POST",
     headers: {
       "Content-Type": "application/graphql"
@@ -38,7 +36,7 @@ const fetchAndSaveData = (dataUrl, wrangler, filename, gqlQuery) => {
 
   return (
     // Currently there are only two types of sources.
-    request(gqlQuery ? gqlRequestParams : getRequestParams)
+    request(gqlQuery ? { ...commonRequestParams, ...gqlRequestParams } : commonRequestParams)
     // Wrangler converts response to geojson format
       .then(
         wrangler,

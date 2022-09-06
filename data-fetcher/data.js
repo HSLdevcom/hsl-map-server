@@ -1,5 +1,17 @@
 const _ = require("lodash");
 
+// Wrapper to log errors
+const errorLogger = (wrangler) => (
+  (body) => {
+    try {
+      wrangler(body);
+    } catch (err) {
+      console.error("Response body for the following error was:\n", body);
+      throw err;
+    }
+  }
+);
+
 // This just modifies response body to json object
 const dummyGeojsonWrangler = (body) => {
   const geojsonData = JSON.parse(body);
@@ -150,9 +162,9 @@ module.exports = {
     citybikeQuery,
   },
   wranglers: {
-    dummyGeojsonWrangler,
-    stopWrangler,
-    stationWrangler,
-    citybikeWrangler,
+    dummyGeojsonWrangler: errorLogger(dummyGeojsonWrangler),
+    stopWrangler: errorLogger(stopWrangler),
+    stationWrangler: errorLogger(stationWrangler),
+    citybikeWrangler: errorLogger(citybikeWrangler),
   },
 };

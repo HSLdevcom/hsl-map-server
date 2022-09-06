@@ -10,13 +10,14 @@ const dataProcesses = layers.map((layer) => (
     source.wrangler,
     source.file,
     source.gqlQuery,
-  )
-    .then((err) => (_.pickBy({
+  ).then((err) => {
+    if (err) console.error(`Error fetching ${source.file}\n`, err);
+    return _.pickBy({
       file: source.file,
       status: !err ? "ok" : "error",
       error: err && err.toString(),
-    }, (d) => d !== undefined)))))
-));
+    }, (d) => d !== undefined);
+  })))));
 
 Promise.all(dataProcesses)
   .then((status) => console.log("Download process done:\n", status));
