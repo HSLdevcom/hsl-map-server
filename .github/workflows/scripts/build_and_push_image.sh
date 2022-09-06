@@ -45,7 +45,7 @@ docker build --tag=$DOCKER_IMAGE -f Dockerfile .
 
 echo Running $DOCKER_IMAGE
 docker run --rm -p 8080:8080 -h hsl-map-server --name hsl-map-server $DOCKER_IMAGE &
-sleep 60
+sleep 120
 
 test http://localhost:8080/map/v2/hsl-map/14/9326/4739.png 50000
 test http://localhost:8080/map/v2/hsl-map-sv/14/9326/4739.png 50000
