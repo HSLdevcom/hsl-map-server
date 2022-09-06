@@ -4,7 +4,7 @@ const _ = require("lodash");
 const errorLogger = (wrangler) => (
   (body) => {
     try {
-      wrangler(body);
+      return wrangler(body);
     } catch (err) {
       console.error("Response body for the following error was:\n", body);
       throw err;
