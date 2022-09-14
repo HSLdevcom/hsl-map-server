@@ -19,21 +19,17 @@
   "homepage": "https://github.com/HSLdevcom/hsl-map-server#readme",
   "dependencies": {
     "@mapbox/mbtiles": "^0.12.1",
-    "forever": "<=4.0.2",
+    "forever": "^4.0.3",
     "hsl-map-style": "hsldevcom/hsl-map-style#master",
     "lodash": "^4.17.21",
     "request": "^2.88.2",
     "requestretry": "^7.1.0",
-    "tessera": "^0.14.2",
+    "tessera": "^0.15.3",
     "tilelive-geojson": "hsldevcom/tilelive-geojson",
     "tilelive-gl": "hsldevcom/tilelive-gl#MM-423"
   },
-  "resolutions": {
-    "@mapbox/mapbox-gl-native": "^5.0.2",
-    "tilelive-gl/**/semver": "<=7.3.5"
-  },
   "devDependencies": {
-    "eslint": "^7.32.0",
+    "eslint": "^8.23.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2"
   }
