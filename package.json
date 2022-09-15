@@ -24,7 +24,7 @@
     "lodash": "^4.17.21",
     "request": "^2.88.2",
     "requestretry": "^7.1.0",
-    "tessera": "^0.15.3",
+    "tessera": "hsldevcom/tessera",
     "tilelive-geojson": "hsldevcom/tilelive-geojson",
     "tilelive-gl": "hsldevcom/tilelive-gl#MM-423"
   },
