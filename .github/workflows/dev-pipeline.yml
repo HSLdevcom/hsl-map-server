@@ -1,13 +1,13 @@
 name: Process dev push or pr
 on:
   schedule:
-   - cron:  '0 2 * * *'
+   - cron:  '45 0 * * *'
   push:
     branches:
       - develop
 jobs:
   docker-push:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
