@@ -1,13 +1,13 @@
 name: Process master push or pr
 on:
   schedule:
-    - cron:  0 3 * * *
+    - cron:  45 1 * * *
   push:
     branches:
       - master
 jobs:
   docker-push:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
