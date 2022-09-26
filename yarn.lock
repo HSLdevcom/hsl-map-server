@@ -841,15 +841,15 @@ cliff@^0.1.10:
     eyes "~0.1.8"
     winston "0.8.x"
 
+clone@2.x, clone@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
+
 clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==
-
-clone@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
-  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -3211,6 +3211,13 @@ node-addon-api@^5.0.0:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-5.0.0.tgz#7d7e6f9ef89043befdb20c1989c905ebde18c501"
   integrity sha512-CvkDw2OEnme7ybCykJpVcKH+uAOLV2qLqiyla128dN9TkEWfrYmxG6C2boDe5KcNQqZF3orkqzGgOMvZ/JNekA==
 
+node-cache@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/node-cache/-/node-cache-5.1.2.tgz#f264dc2ccad0a780e76253a694e9fd0ed19c398d"
+  integrity sha512-t1QzWwnk4sjLWaQAS8CHgOJ+RAfmHpxFWmc36IWTiWHQfs0w5JDMBS1b1ZxQteo0vVVuWJvIUKHDkkeK7vIGCg==
+  dependencies:
+    clone "2.x"
+
 node-fetch@^2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
@@ -4535,11 +4542,12 @@ tilelive-cache@^0.7.2:
     locking-cache "^0.3.0"
     tilelive-streaming "^0.7.4"
 
-tilelive-geojson@hsldevcom/tilelive-geojson:
+tilelive-geojson@hsldevcom/tilelive-geojson#cache:
   version "0.0.1"
-  resolved "https://codeload.github.com/hsldevcom/tilelive-geojson/tar.gz/48364e7aabc84448b82d156947a12128e6304197"
+  resolved "https://codeload.github.com/hsldevcom/tilelive-geojson/tar.gz/f18ff09fa6c0bc736546805016297630edf16bba"
   dependencies:
     geojson-vt "^3.2.1"
+    node-cache "^5.1.2"
     vt-pbf "^3.1.3"
 
 tilelive-gl@hsldevcom/tilelive-gl#MM-423:
