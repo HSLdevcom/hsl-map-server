@@ -11,6 +11,7 @@ const vectorHeaders = { "headers": { "Cache-Control": "public,max-age=43200" } }
 const geojsonSourceProps = {
   "protocol": "geojson:",
   "query": {},
+  "minzoom": 5,
   "maxzoom": 20,
   "bounds": [18, 58, 32, 71],
 };
