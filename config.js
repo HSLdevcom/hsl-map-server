@@ -217,6 +217,36 @@ module.exports = {
     ...rasterHeaders,
   },
 
+  // English map style
+  "/map/:version(v1|v2)/hsl-map-en": {
+    "source": {
+      "protocol": "gl:",
+      "query": { bufferWidth: 8 },
+      "style": hslMapStyle.generateStyle({
+        sourcesUrl,
+        components: {
+          text_en: { enabled: true },
+          simplified: { enabled: true }
+        }
+      })
+    },
+    ...rasterHeaders,
+  },
+  "/map/:version(v1|v2)/hsl-map-en-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": { layerTileSize: 256, bufferWidth: 8 },
+      "style": hslMapStyle.generateStyle({
+        sourcesUrl,
+        components: {
+          text_en: { enabled: true },
+          simplified: { enabled: true }
+        }
+      })
+    },
+    ...rasterHeaders,
+  },
+
   // Bilingual map style
   "/map/:version(v1|v2)/hsl-map-fi-sv": {
     "source": {
