@@ -30,10 +30,10 @@ COPY . ${WORK}
 RUN mkdir -p ${DATA_DIR}
 
 # New OpenMapTiles schema
-RUN wget https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles -t 3 -O ${DATA_DIR}/finland.mbtiles
+RUN wget https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles -q -t 3 -O ${DATA_DIR}/finland.mbtiles
 
 # Deprecated schema. Should be removed at some point, but important to include until all clients are using the new schema.
-RUN wget https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles -t 3 -O ${DATA_DIR}/finland-old-schema.mbtiles
+RUN wget https://hslstoragekarttatuotanto.blob.core.windows.net/tiles/tiles.mbtiles -q -t 3 -O ${DATA_DIR}/finland-old-schema.mbtiles
 
 EXPOSE 8080
 
