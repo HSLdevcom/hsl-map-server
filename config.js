@@ -135,6 +135,9 @@ module.exports = {
       }, {
         "id": "hubs",
         "file": `${DATA_DIR}/hsl-parkandride-hubs.geojson`,
+      }, {
+        "id": "facility-points",
+        "file": `${DATA_DIR}/hsl-parkandride-facility-points.geojson`,
       }]
     },
     ...vectorHeaders,

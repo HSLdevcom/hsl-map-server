@@ -1,4 +1,5 @@
 const _ = require("lodash");
+const centroid = require("@turf/centroid").default;
 
 // Wrapper to log errors
 const errorLogger = (wrangler) => (
@@ -16,6 +17,20 @@ const errorLogger = (wrangler) => (
 const dummyGeojsonWrangler = (body) => {
   const geojsonData = JSON.parse(body);
   return geojsonData;
+};
+
+// Converts geojson polygons to points.
+const geojsonPolygonToPointWrangler = (body) => {
+  const originalGeojsonData = JSON.parse(body);
+  const centeredFeatures = originalGeojsonData.features.map((f) => ({
+    ...f, // Keep the original properties
+    geometry: centroid(f).geometry,
+  }));
+
+  return {
+    type: "FeatureCollection",
+    features: centeredFeatures,
+  };
 };
 
 const stopQuery = `
@@ -163,6 +178,7 @@ module.exports = {
   },
   wranglers: {
     dummyGeojsonWrangler: errorLogger(dummyGeojsonWrangler),
+    geojsonPolygonToPointWrangler: errorLogger(geojsonPolygonToPointWrangler),
     stopWrangler: errorLogger(stopWrangler),
     stationWrangler: errorLogger(stationWrangler),
     citybikeWrangler: errorLogger(citybikeWrangler),

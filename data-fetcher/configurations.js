@@ -104,6 +104,12 @@ const layers = [
         url: `${PARKANDRIDE_URL}hubs.geojson`,
         wrangler: wranglers.dummyGeojsonWrangler,
         file: "hsl-parkandride-hubs.geojson",
+      },
+      // Same data as facilities, but converted to points
+      {
+        url: `${PARKANDRIDE_URL}facilities.geojson`,
+        wrangler: wranglers.geojsonPolygonToPointWrangler,
+        file: "hsl-parkandride-facility-points.geojson",
       }
     ]
   },
