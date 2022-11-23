@@ -19,6 +19,7 @@
   "homepage": "https://github.com/HSLdevcom/hsl-map-server#readme",
   "dependencies": {
     "@mapbox/mbtiles": "^0.12.1",
+    "@turf/centroid": "^6.5.0",
     "forever": "^4.0.3",
     "hsl-map-style": "hsldevcom/hsl-map-style#master",
     "lodash": "^4.17.21",
