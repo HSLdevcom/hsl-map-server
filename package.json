@@ -26,8 +26,8 @@
     "request": "^2.88.2",
     "requestretry": "^7.1.0",
     "tessera": "hsldevcom/tessera",
-    "tilelive-geojson": "hsldevcom/tilelive-geojson#cache",
-    "tilelive-gl": "hsldevcom/tilelive-gl#MM-423"
+    "tilelive-geojson": "hsldevcom/tilelive-geojson",
+    "tilelive-gl": "hsldevcom/tilelive-gl"
   },
   "devDependencies": {
     "eslint": "^8.23.1",

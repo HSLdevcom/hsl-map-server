@@ -4562,7 +4562,7 @@ tilelive-cache@^0.7.2:
     locking-cache "^0.3.0"
     tilelive-streaming "^0.7.4"
 
-tilelive-geojson@hsldevcom/tilelive-geojson#cache:
+tilelive-geojson@hsldevcom/tilelive-geojson:
   version "0.0.1"
   resolved "https://codeload.github.com/hsldevcom/tilelive-geojson/tar.gz/f18ff09fa6c0bc736546805016297630edf16bba"
   dependencies:
@@ -4570,7 +4570,7 @@ tilelive-geojson@hsldevcom/tilelive-geojson#cache:
     node-cache "^5.1.2"
     vt-pbf "^3.1.3"
 
-tilelive-gl@hsldevcom/tilelive-gl#MM-423:
+tilelive-gl@hsldevcom/tilelive-gl:
   version "0.1.0"
   resolved "https://codeload.github.com/hsldevcom/tilelive-gl/tar.gz/d9ca4209e3df7cd6a2df9a0246734bdacba24799"
   dependencies:
