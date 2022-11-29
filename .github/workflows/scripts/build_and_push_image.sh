@@ -81,4 +81,5 @@ if [ "$DOCKER_TAG_OPTIONAL" ]; then
     echo Pushed $DOCKER_IMAGE_TAG_OPTIONAL
 fi
 
+docker logout
 echo Build completed

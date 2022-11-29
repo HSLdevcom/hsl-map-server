@@ -135,6 +135,9 @@ module.exports = {
       }, {
         "id": "hubs",
         "file": `${DATA_DIR}/hsl-parkandride-hubs.geojson`,
+      }, {
+        "id": "facility-points",
+        "file": `${DATA_DIR}/hsl-parkandride-facility-points.geojson`,
       }]
     },
     ...vectorHeaders,
@@ -210,6 +213,36 @@ module.exports = {
         sourcesUrl,
         components: {
           text_sv: { enabled: true },
+          simplified: { enabled: true }
+        }
+      })
+    },
+    ...rasterHeaders,
+  },
+
+  // English map style
+  "/map/:version(v1|v2)/hsl-map-en": {
+    "source": {
+      "protocol": "gl:",
+      "query": { bufferWidth: 8 },
+      "style": hslMapStyle.generateStyle({
+        sourcesUrl,
+        components: {
+          text_en: { enabled: true },
+          simplified: { enabled: true }
+        }
+      })
+    },
+    ...rasterHeaders,
+  },
+  "/map/:version(v1|v2)/hsl-map-en-256": {
+    "source": {
+      "protocol": "gl:",
+      "query": { layerTileSize: 256, bufferWidth: 8 },
+      "style": hslMapStyle.generateStyle({
+        sourcesUrl,
+        components: {
+          text_en: { enabled: true },
           simplified: { enabled: true }
         }
       })
