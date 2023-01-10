@@ -4580,7 +4580,7 @@ tar@^6.1.11:
 
 tessera@hsldevcom/tessera:
   version "0.15.3"
-  resolved "https://codeload.github.com/hsldevcom/tessera/tar.gz/cc1a11468742a63aa387c72efdf1eb319b82b85a"
+  resolved "https://codeload.github.com/hsldevcom/tessera/tar.gz/40b9da2c899879218b16be974c81c987466174f4"
   dependencies:
     "@mapbox/sphericalmercator" "^1.2.0"
     "@mapbox/tilelive" "^6.1.0"
