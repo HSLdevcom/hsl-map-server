@@ -20,9 +20,15 @@ const fetchAndSaveData = (dataUrl, wrangler, filename, gqlQuery) => {
     followAllRedirects: true,
     fullResponse: false,
     retryStrategy: (err, response) => {
-      const retry = request.RetryStrategies.HTTPOrNetworkError(err, response);
-      if (retry) console.log(`An error on ${uri}. Response status code was ${response.statusCode}. Retrying...`);
-      return retry;
+      const retryNetworkErr = request.RetryStrategies.NetworkError(err, response);
+      const retryHttpErr = request.RetryStrategies.HTTPError(err, response);
+
+      /* eslint-disable no-console */
+      if (retryNetworkErr) console.log(`A network error on ${uri}. The error code was ${err.code}. Retrying...`);
+      if (retryHttpErr) console.log(`A http error on ${uri}. The response status code was ${response.statusCode}. Retrying...`);
+      /* eslint-enable no-console */
+
+      return retryNetworkErr || retryHttpErr;
     },
   };
 
