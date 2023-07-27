@@ -1,4 +1,4 @@
-FROM node:18-bullseye-slim
+FROM node:16-bullseye-slim
 
 ENV WORK=/opt/hsl-map-server
 ENV DATA_DIR=${WORK}/data
