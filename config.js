@@ -28,14 +28,9 @@ module.exports = {
     "source": `mbtiles://${DATA_DIR}/finland.mbtiles`,
     ...vectorHeaders,
   },
-  // Endpoint for the old deprecated schema. Remove after not needed any more.
-  "/map/v1/hsl-vector-map": {
-    "source": `mbtiles://${DATA_DIR}/finland-old-schema.mbtiles`,
-    ...vectorHeaders,
-  },
 
   // Citybike maps
-  "/map/:version(v1|v2)/hsl-citybike-map": {
+  "/map/v2/hsl-citybike-map": {
     "source": {
       ...geojsonSourceProps,
       "center": hslCenter,
@@ -47,7 +42,7 @@ module.exports = {
     },
     ...vectorHeaders,
   },
-  "/map/:version(v1|v2)/waltti-citybike-map": {
+  "/map/v2/waltti-citybike-map": {
     "source": {
       ...geojsonSourceProps,
       "center": finlandCenter,
@@ -60,7 +55,7 @@ module.exports = {
     },
     ...vectorHeaders,
   },
-  "/map/:version(v1|v2)/finland-citybike-map": {
+  "/map/v2/finland-citybike-map": {
     "source": {
       ...geojsonSourceProps,
       "center": finlandCenter,
@@ -74,7 +69,7 @@ module.exports = {
   },
 
   // Stop maps
-  "/map/:version(v1|v2)/hsl-stop-map": {
+  "/map/v2/hsl-stop-map": {
     "source": {
       ...geojsonSourceProps,
       "center": hslCenter,
@@ -90,7 +85,7 @@ module.exports = {
     ...vectorHeaders,
 
   },
-  "/map/:version(v1|v2)/finland-stop-map": {
+  "/map/v2/finland-stop-map": {
     "source": {
       ...geojsonSourceProps,
       "center": finlandCenter,
@@ -106,7 +101,7 @@ module.exports = {
     ...vectorHeaders,
 
   },
-  "/map/:version(v1|v2)/waltti-stop-map": {
+  "/map/v2/waltti-stop-map": {
     "source": {
       ...geojsonSourceProps,
       "center": finlandCenter,
@@ -124,7 +119,7 @@ module.exports = {
   },
 
   // Park and ride map (Liityntäpysäköinti)
-  "/map/:version(v1|v2)/hsl-parkandride-map": {
+  "/map/v2/hsl-parkandride-map": {
     "source": {
       ...geojsonSourceProps,
       "center": hslCenter,
@@ -144,7 +139,7 @@ module.exports = {
   },
 
   // Ticket sales point map
-  "/map/:version(v1|v2)/hsl-ticket-sales-map": {
+  "/map/v2/hsl-ticket-sales-map": {
     "source": {
       ...geojsonSourceProps,
       "center": hslCenter,
@@ -158,12 +153,10 @@ module.exports = {
   },
 
   // Raster endpoints
-
-  // Raster endpoints v1 and v2 both uses OMT at the moment.
   // Default layer tile is 512x512 pixels, but 256x256 layers are defined separately.
 
   // The main map. Reittiopas style.
-  "/map/:version(v1|v2)/hsl-map": {
+  "/map/v2/hsl-map": {
     "source": {
       "protocol": "gl:",
       "query": { bufferWidth: 8 },
@@ -176,7 +169,7 @@ module.exports = {
     },
     ...rasterHeaders,
   },
-  "/map/:version(v1|v2)/hsl-map-256": {
+  "/map/v2/hsl-map-256": {
     "source": {
       "protocol": "gl:",
       "query": { layerTileSize: 256, bufferWidth: 8 },
@@ -191,7 +184,7 @@ module.exports = {
   },
 
   // Swedish map style
-  "/map/:version(v1|v2)/hsl-map-sv": {
+  "/map/v2/hsl-map-sv": {
     "source": {
       "protocol": "gl:",
       "query": { bufferWidth: 8 },
@@ -205,7 +198,7 @@ module.exports = {
     },
     ...rasterHeaders,
   },
-  "/map/:version(v1|v2)/hsl-map-sv-256": {
+  "/map/v2/hsl-map-sv-256": {
     "source": {
       "protocol": "gl:",
       "query": { layerTileSize: 256, bufferWidth: 8 },
@@ -221,7 +214,7 @@ module.exports = {
   },
 
   // English map style
-  "/map/:version(v1|v2)/hsl-map-en": {
+  "/map/v2/hsl-map-en": {
     "source": {
       "protocol": "gl:",
       "query": { bufferWidth: 8 },
@@ -235,7 +228,7 @@ module.exports = {
     },
     ...rasterHeaders,
   },
-  "/map/:version(v1|v2)/hsl-map-en-256": {
+  "/map/v2/hsl-map-en-256": {
     "source": {
       "protocol": "gl:",
       "query": { layerTileSize: 256, bufferWidth: 8 },
@@ -251,7 +244,7 @@ module.exports = {
   },
 
   // Bilingual map style
-  "/map/:version(v1|v2)/hsl-map-fi-sv": {
+  "/map/v2/hsl-map-fi-sv": {
     "source": {
       "protocol": "gl:",
       "query": { bufferWidth: 8 },
@@ -265,7 +258,7 @@ module.exports = {
     },
     ...rasterHeaders,
   },
-  "/map/:version(v1|v2)/hsl-map-fi-sv-256": {
+  "/map/v2/hsl-map-fi-sv-256": {
     "source": {
       "protocol": "gl:",
       "query": { layerTileSize: 256, bufferWidth: 8 },
@@ -281,7 +274,7 @@ module.exports = {
   },
 
   // Map with no texts
-  "/map/:version(v1|v2)/hsl-map-no-text": {
+  "/map/v2/hsl-map-no-text": {
     "source": {
       "protocol": "gl:",
       "query": {},
@@ -295,7 +288,7 @@ module.exports = {
     },
     ...rasterHeaders,
   },
-  "/map/:version(v1|v2)/hsl-map-no-text-256": {
+  "/map/v2/hsl-map-no-text-256": {
     "source": {
       "protocol": "gl:",
       "query": { layerTileSize: 256 },
@@ -311,7 +304,7 @@ module.exports = {
   },
 
   // Greyscale map
-  "/map/:version(v1|v2)/hsl-map-greyscale": {
+  "/map/v2/hsl-map-greyscale": {
     "source": {
       "protocol": "gl:",
       "query": { bufferWidth: 8 },
@@ -326,7 +319,7 @@ module.exports = {
     },
     ...rasterHeaders,
   },
-  "/map/:version(v1|v2)/hsl-map-greyscale-256": {
+  "/map/v2/hsl-map-greyscale-256": {
     "source": {
       "protocol": "gl:",
       "query": { layerTileSize: 256, bufferWidth: 8 },
@@ -343,7 +336,7 @@ module.exports = {
   },
 
   // Greyscale map without texts
-  "/map/:version(v1|v2)/hsl-map-greyscale-no-text": {
+  "/map/v2/hsl-map-greyscale-no-text": {
     "source": {
       "protocol": "gl:",
       "query": {},
@@ -359,7 +352,7 @@ module.exports = {
     },
     ...rasterHeaders,
   },
-  "/map/:version(v1|v2)/hsl-map-greyscale-256-no-text": {
+  "/map/v2/hsl-map-greyscale-256-no-text": {
     "source": {
       "protocol": "gl:",
       "query": { layerTileSize: 256 },
