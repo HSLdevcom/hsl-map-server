@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: master
       - name: Change permissions
@@ -21,3 +21,8 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
           DOCKER_TAG: prod
+          PARKANDRIDE_URL: ${{ secrets.PARKANDRIDE_URL }}
+          TICKET_SALES_URL: ${{ secrets.TICKET_SALES_URL }}
+          HSL_OTP_URL: ${{ secrets.HSL_OTP_URL }}
+          FINLAND_OTP_URL: ${{ secrets.FINLAND_OTP_URL }}
+          WALTTI_OTP_URL: ${{ secrets.WALTTI_OTP_URL }}
