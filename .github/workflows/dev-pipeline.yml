@@ -21,3 +21,8 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
           DOCKER_TAG: dev
+          PARKANDRIDE_URL: ${{ secrets.PARKANDRIDE_URL }}
+          TICKET_SALES_URL: ${{ secrets.TICKET_SALES_URL }}
+          HSL_OTP_URL: ${{ secrets.HSL_OTP_URL }}
+          FINLAND_OTP_URL: ${{ secrets.FINLAND_OTP_URL }}
+          WALTTI_OTP_URL: ${{ secrets.WALTTI_OTP_URL }}
