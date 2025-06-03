@@ -12,7 +12,7 @@
     "url": "git+https://github.com/HSLdevcom/hsl-map-server.git"
   },
   "author": "HSLdevcom",
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "bugs": {
     "url": "https://github.com/HSLdevcom/hsl-map-server/issues"
   },
