@@ -1,0 +1,15 @@
+name: PR pipeline
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  ci-cd:
+    uses: HSLdevcom/transitdata-shared-workflows/.github/workflows/ci-cd-typescript.yml@main
+    with:
+      checkAndTestInsideDocker: true
+      checkAndTestOutsideDocker: false
+      performRelease: false
+    secrets: inherit
