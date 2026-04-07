@@ -1,4 +1,4 @@
-FROM node:18-bullseye-slim
+FROM node:18-bullseye-slim AS base
 
 ENV WORK=/opt/hsl-map-server
 ENV DATA_DIR=${WORK}/data
@@ -26,6 +26,13 @@ COPY yarn.lock package.json ${WORK}/
 RUN yarn install && yarn cache clean
 
 COPY . ${WORK}
+
+# tester stage: run linting checks; exits non-zero if linting fails
+FROM base AS tester
+RUN yarn eslint .
+
+# production stage: download map data and expose the server
+FROM base AS production
 
 RUN mkdir -p ${DATA_DIR}
 
