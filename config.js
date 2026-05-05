@@ -2,7 +2,7 @@ const hslMapStyle = require("hsl-map-style");
 
 const { DATA_DIR } = require("./constants");
 
-const sourcesUrl = "http://localhost:8080/";
+const sourcesUrl = "http://127.0.0.1:8080/";
 
 const rasterHeaders = { "headers": { "Cache-Control": "public,max-age=604800" } };
 const vectorHeaders = { "headers": { "Cache-Control": "public,max-age=43200" } };
