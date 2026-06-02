@@ -2304,10 +2304,10 @@ hosted-git-info@^2.1.4:
   integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 hsl-map-style@hsldevcom/hsl-map-style#master:
-  version "1.2.3"
-  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/2e247924dde50d3e229ab5cb2650d0d2a56ff66e"
+  version "1.2.4"
+  resolved "https://codeload.github.com/hsldevcom/hsl-map-style/tar.gz/9345d342215f6acb124e868987bbe4891167fa10"
   dependencies:
-    lodash "^4.17.4"
+    lodash "^4.18.1"
 
 http-cache-semantics@^4.1.0:
   version "4.1.1"
@@ -2905,7 +2905,7 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-lodash@^4.17.15, lodash@^4.17.4, lodash@^4.18.1:
+lodash@^4.17.15, lodash@^4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.18.1.tgz#ff2b66c1f6326d59513de2407bf881439812771c"
   integrity sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==
