@@ -1,25 +1,27 @@
-FROM node:18-bullseye-slim
+FROM node:22-bookworm-slim
 
 ENV WORK=/opt/hsl-map-server
 ENV DATA_DIR=${WORK}/data
 ENV NODE_OPTS ""
 ENV NODE_ENV=production
 
-# Debian bullseye is EOL; deb.debian.org's live bullseye/bullseye-security
-# repos have rotated forward and now conflict with package versions already
-# baked into this base image (e.g. libc6, perl-base, libudev1), and
-# bullseye-security's Release file has also started expiring. Pin apt to a
-# fixed snapshot.debian.org date that is consistent with this image instead.
-RUN printf 'deb http://snapshot.debian.org/archive/debian/20250520T000000Z bullseye main\ndeb http://snapshot.debian.org/archive/debian-security/20250520T000000Z bullseye-security main\ndeb http://snapshot.debian.org/archive/debian/20250520T000000Z bullseye-updates main\n' > /etc/apt/sources.list \
-  && apt-get update -o Acquire::Check-Valid-Until=false \
+# maplibre-gl-native 5.4.x prebuilt (node-v127) binaries are built on Ubuntu 22.04
+# and link against libjpeg.so.8 and libicu*.so.70, which Debian doesn't ship. They also
+# abort unless the runtime libpng is exactly 1.6.37 (bookworm has 1.6.39), so the
+# Ubuntu libpng is put in /usr/local/lib, which ld.so searches before the system one.
+RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y wget ca-certificates xserver-xorg-video-dummy libjemalloc2 \
   # maplibre-native dependencies
-  ccache cmake ninja-build pkg-config xvfb libcurl4-openssl-dev libglfw3-dev libuv1-dev g++-10 libc++-9-dev libc++abi-9-dev libpng-dev libgl1-mesa-dev libgl1-mesa-dri --no-install-recommends \
-  && wget http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo8_2.0.3-0ubuntu1_amd64.deb \
-  && apt install ./libjpeg-turbo8_2.0.3-0ubuntu1_amd64.deb \
-  && wget http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu66_66.1-2ubuntu2_amd64.deb \
-  && apt install ./libicu66_66.1-2ubuntu2_amd64.deb \
-  && rm ./*.deb \
+  ccache cmake ninja-build pkg-config xvfb libcurl4-openssl-dev libglfw3-dev libuv1-dev g++ libc++-dev libc++abi-dev libpng-dev libwebp7 libgl1-mesa-dev libgl1-mesa-dri --no-install-recommends \
+  && wget http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo8_2.1.2-0ubuntu1_amd64.deb \
+  && apt-get install -y ./libjpeg-turbo8_2.1.2-0ubuntu1_amd64.deb \
+  && wget http://archive.ubuntu.com/ubuntu/pool/main/i/icu/libicu70_70.1-2_amd64.deb \
+  && apt-get install -y ./libicu70_70.1-2_amd64.deb \
+  && wget http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng1.6/libpng16-16_1.6.37-3build5_amd64.deb \
+  && dpkg-deb -x ./libpng16-16_1.6.37-3build5_amd64.deb /tmp/libpng \
+  && cp -a /tmp/libpng/usr/lib/x86_64-linux-gnu/libpng16.so.16* /usr/local/lib/ \
+  && ldconfig \
+  && rm -rf /tmp/libpng ./*.deb \
   && rm -rf /var/lib/apt/lists/*
 
 # This should prevent memory leak of sharp-package

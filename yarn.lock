@@ -15,10 +15,10 @@
     "@octokit/rest" "18.12.0"
     commander "7.2.0"
 
-"@acalcutt/node-pre-gyp@^1.0.11":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@acalcutt/node-pre-gyp/-/node-pre-gyp-1.0.13.tgz#a319f227f7cf48312ef547eb5ba4ea945764b755"
-  integrity sha512-PRMMOcGoAr22RU3YNNNh/vQEfBnUfvJi2RuS/JzDJv7cOrfa6cGYSLMN0qnPCWvvCfogjYMlbi2ZzxhysDdywQ==
+"@acalcutt/node-pre-gyp@^1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@acalcutt/node-pre-gyp/-/node-pre-gyp-1.0.15.tgz#e2b9bdf9656801861f3c29534c743da7ab5fbf33"
+  integrity sha512-+9vgfGWqByWMO/XbbCSpKe/ug7n16YbjKixY6D/Wx6goqx43qdmcXhFrGlnqNbyrpzKwbbQASX7AS/YbZNc/rg==
   dependencies:
     detect-libc "^2.0.0"
     https-proxy-agent "^5.0.0"
@@ -175,14 +175,14 @@
     "@mapbox/point-geometry" "~0.1.0"
 
 "@maplibre/maplibre-gl-native@^5.1.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@maplibre/maplibre-gl-native/-/maplibre-gl-native-5.2.0.tgz#8826bc725dc7881bdc0aefc6411884fd2dafb2e2"
-  integrity sha512-9Y5oC4cc+PpeCdb4XfBv0o74AU4SKvZPCOjcWnj4g2P15TK3o3M0biSP3PTMx7vqIvvHEkWz/ybTXXCR7mrd2g==
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@maplibre/maplibre-gl-native/-/maplibre-gl-native-5.4.1.tgz#0718fb0ac8c3dd25d072d10799431d9fce2ebe3a"
+  integrity sha512-Vkn/3W2suB1DDKjb5fzS2CDT046MqmZV2+EvQ+lU5t+khxJucbKRGfa+kHTksW//F6sTPb+Bez7CEKICOb5L7w==
   dependencies:
-    "@acalcutt/node-pre-gyp" "^1.0.11"
+    "@acalcutt/node-pre-gyp" "^1.0.15"
     "@acalcutt/node-pre-gyp-github" "1.4.8"
-    minimatch "^7.2.0"
-    npm-run-all "^4.0.2"
+    minimatch "^9.0.4"
+    npm-run-all "^4.1.5"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -3061,7 +3061,7 @@ mimic-response@^3.1.0:
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-3.1.0.tgz#2d1d59af9c1b129815accc2c46a022a5ce1fa3c9"
   integrity sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==
 
-minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2, minimatch@^7.2.0, minimatch@^9.0.5:
+minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2, minimatch@^9.0.4, minimatch@^9.0.5:
   version "9.0.9"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-9.0.9.tgz#9b0cb9fcb78087f6fd7eababe2511c4d3d60574e"
   integrity sha512-OBwBN9AL4dqmETlpS2zasx+vTeWclWzkblfZk7KTA5j3jeOONz/tRCnZomUyvNg83wL5Zv9Ss6HMJXAgL8R2Yg==
@@ -3328,7 +3328,7 @@ normalize-path@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
-npm-run-all@^4.0.2:
+npm-run-all@^4.1.5:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/npm-run-all/-/npm-run-all-4.1.5.tgz#04476202a15ee0e2e214080861bff12a51d98fba"
   integrity sha512-Oo82gJDAVcaMdi3nuoKFavkIHBRVqQ1qvMb+9LHk/cF4P6B2m8aP04hGf7oL6wZ9BuGwX1onlLhpuoofSyoQDQ==

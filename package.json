@@ -1,6 +1,6 @@
 {
   "name": "hsl-map-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HSL map server",
   "main": "config.js",
   "scripts": {
